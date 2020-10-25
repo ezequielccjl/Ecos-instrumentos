@@ -1,0 +1,36 @@
+    .nav-links{
+        position: fixed;
+        background: rgba(113, 0, 0, 0.88);
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        /*display: none;*/
+        clip-path: circle(0px at 105% -10%);
+        -moz-clip-path: circle(0px at 105% -10%);
+        transition: all 1s ease-out;
+        z-index: 20;
+    }
+
+    .nav-links.open{
+        clip-path: circle(2000px at 93% 2%);
+        -moz-clip-path: circle(2000px at 93% 2%);
+        pointer-events: all;
+    }
+    
+    .nav-links li a{
+        font-size: 30px;
+    }
+
+    .nav-links li:nth-child(1){
+        transition: all 0.5 ease 0.4;
+    }
+    .nav-links li:nth-child(2){
+        transition: all 0.5 ease 0.8;
+    }
+    .nav-links li:nth-child(3){
+        transition: all 0.5 ease 1;
+    }
+
+    li.fade{
+        opacity: 1;
+    }

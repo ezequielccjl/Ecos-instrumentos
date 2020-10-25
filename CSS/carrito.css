@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@800&family=Raleway:wght@300&family=Ramabhadra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap');
+
+/*========================================= CARRITO =========================================*/
+
+#contCarrito{
+    border-color: rgba(0, 0, 0, 0.3);
+    border-style: solid;
+    border-radius: 5%;
+    border-width: 1px;
+    height: 400px;
+    width: 100%;
+}
+
+#total{
+    font-size: 25px;
+}
+
+#totalNum{
+    font-size: 45px;
+    font-weight: bold;
+}
+
+#btnComprar{
+    font-size: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    transition: .3s;
+}
+
+#btnComprar:hover{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    transition-duration: 300ms;
+}
+
+#btnComprar:focus{
+    box-shadow: none;
+}
+
+div i{
+    font-size: 20px;
+}
+
+.btnLargo{
+    width: 100%;
+    border-style: solid;
+    border-radius: 0%;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.3)
+}
+
+.btnLargo:hover{
+    border-radius: 0%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: brown;
+    transition-duration: 200ms;
+}
+
+.btnLargo:focus{
+    box-shadow: none;
+}
+
+.prodAgregados{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    /*border-color: tomato;*/
+    border-style: solid;
+    /*background-color: red;*/
+    color: white;
+    font-weight: bold;
+}
+
+.img-top{
+    cursor: pointer !important;
+}
+
+.display-none{
+    display: none !important;
+}
+
+/*Clases para toast*/
+.swal2-actions{
+    display: none !important;
+}
+
+#swal2-title{
+    font-family: sans-serif;
+}
+
+body.swal2-toast-shown .swal2-container.swal2-top-end, body.swal2-toast-shown .swal2-container.swal2-top-right{
+    top: 7vh !important;
+}
+
+
+
+
+
+

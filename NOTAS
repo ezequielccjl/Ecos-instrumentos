@@ -1,0 +1,29 @@
+TAREAS RESTANTES: 
+
+LocalStorage carrito 
+Boton vaciar carrito
+--Side menu con total y lista
+Night Mode
+--AOS (Animate On Scroll) Library
+Footer (contacto)
+Imagenes
+
+es pro 
+https://www.youtube.com/watch?v=CqUmUpoNKeI&feature=youtu.be
+bateria:
+https://www.youtube.com/watch?v=cl-_zog-Bfg&feature=youtu.be
+
+
+<button id="boton-cerrar-modal" type="button" onclick="toggleFondo()" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+
+<div class="unLi mb-2">
+  <span class="listaNombre">Producto</span>
+  <span class="listaCant">15</span>
+                                    
+  <span class="botonesMasMenos">
+  <a class="listaBtn listaMas"><i class="fas fa-plus"></i></a>
+  <a class="listaBtn listaMenos"><i class="fas fa-minus"></i></a>
+  </span>
+            </div>

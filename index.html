@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecos</title>
+
+    <!-- JQUERY -->
+    <script
+		src="https://code.jquery.com/jquery-3.5.1.min.js"
+		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous">
+    </script>
+
+    <!-- BOOTSTRAP -->
+    <link 
+    rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+    <!-- ICONO FONT AWESOME-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+    <!-- Sweet Alert Toast -->
+    <script  src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+    <!-- SLIDER -->
+    <link rel="stylesheet"  href="LightSlider/lightslider.css"/>
+    <script src="LightSlider/lightslider.js"></script>
+    <script>
+        $(document).ready(function() {
+           $("#content-slider").lightSlider({
+               loop:false,
+               keyPress:true
+           });
+        })
+    </script>
+    
+    <!-- SNIPPER -->
+    <link rel="stylesheet" href="Snipper/snipper.css">
+
+    <!-- MIS DOCUMENTOS -->
+    <link rel="stylesheet" href="CSS/general.css">
+    <link rel="stylesheet" href="CSS/carrito.css">
+    <link rel="stylesheet" href="CSS/navbar.css">
+    <link rel="stylesheet" href="CSS/lista.css">
+    <link rel="stylesheet" href="CSS/catalogo.css">
+    <link rel="stylesheet" href="CSS/contacto.css">
+
+    <link rel="shortcut icon" type="image/png" href="imgs/guitarra.png">
+    
+    
+    <script src="JS/script.js"></script>
+    <script src="JS/cargar.js"></script>
+    <script src="JS/animNavbar.js"></script>
+    <script src="JS/animMenu.js"></script>
+    <script src="JS/buscador.js"></script>
+    <script src="JS/modal.js"></script>
+    <script defer src="JS/selectFiltros.js"></script>
+    
+</head>
+
+
+<body>
+    
+    <div id="overlay">
+        <div id="ventana-modal"></div>
+    </div>
+    
+    <!--======================================= SECCION NAV Y HEADER =======================================-->
+
+    <nav class="fixed">
+        <a href="" id="carrito-nav">
+            <img src="icons/cart-36px.png" alt="cart">
+        </a>
+        <div class="disparador">Ecos Music</div>
+        
+        <div class="hamburguer">
+            <div class="icon"></div>
+        </div>
+
+        <div class="sidebar">
+            <div id="separador-links">
+                <span>Menú</span>
+            </div>
+            <ul class="nav-links">
+                
+                <li class="fade">
+                    <a href="#seccion-lista-carrito">
+                        <div class="formato-icons-menu"><img src="icons/cart-39px.png" alt="cart"></div>
+                        <span class="ml-3">Carrito</span>
+                    </a>
+                </li>
+                <li class="fade">
+                    <a href="#seccionCatalogo">
+                        <div class="formato-icons-menu"><img src="icons/list-35px.png" alt="list"></div>
+                        <span class="ml-3">Catalogo</span>
+                    </a>
+                </li>
+                <li class="fade">
+                    <a href="#seccion-about">
+                        <div class="formato-icons-menu"><img src="icons/info-35px.png" alt="info"></div>
+                        <span class="ml-3">About</span>
+                    </a>
+                </li>
+                <li class="fade">
+                    <div id="night-mode">
+                        <div class="formato-icons-menu"><img src="icons/moon-36px.png" alt="moon"></div>
+                        <span class="ml-3">Night Mode</span>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+
+    </nav>
+        
+
+    <!--======================== CONTAINERS ================================-->
+    
+    <div class="d-flex justify-content-center" id="main-container">
+
+    <div class="fondo">
+        <h1 id="titulo" class="text-center text-white">ECOS <span class="weight-normal">Music</span></h1>
+    </div>
+    
+    <div id="row-container" class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div id="container">
+
+                <!--================= SECCION CATALOGO ======================-->
+            
+                <section id="seccionCatalogo" class="pt-5 fondoColor">
+
+                    <div>
+                        <span id="tituCat" class="hoobe text-center mb-3 mt-0 ml-0">Catalogo</span>
+                    
+                        <span id="seccion-search"> 
+                            <input id="buscador-text" type="text" placeholder="Buscar producto">
+                            <a href="" id="search-btn">
+                                <i class="fas fa-search"></i>
+                            </a>
+                        </span>
+            
+                    </div>
+                    
+             
+                    <div class="row">
+                        
+                        <div class="col-9">
+                            
+                            <!--SNIPPER-->
+                            <div id="snipper-carga" class="row">
+                                <div class="col-12">
+                                    <div class="sk-folding-cube">
+                                        <div class="sk-cube1 sk-cube"></div>
+                                        <div class="sk-cube2 sk-cube"></div>
+                                        <div class="sk-cube4 sk-cube"></div>
+                                        <div class="sk-cube3 sk-cube"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="contCatalogo">
+                                <!------------ PRODUCTO DE GUIA (NO SE MUESTRA EN EL HTML) ------------>
+                                <div class="item pt-2">
+                                    <ul id="content-slider" class="content-slider pt-2 display-none">
+                                        <li>
+                                            <div class="unProducto mb-5">
+                                                <div class="card text-center sombras cartaAncho">
+                                                    <img class="card img-top centrar" src="imgsCat/sg.png" alt="2" width="50%" height="150px">
+                                            
+                                                    <div class="card-body heebo">
+                                                        <p class="mb-1">Epiphone 1966 G-400</p>
+                                                        <p class="m-0">
+                                                            <span class="font-weight-bold">$20560</span>
+                                                        </p>
+                                                        <div class="row m-0 p-0 btnMasMenos mt-2 justify-content-center">
+                                                            <button id="comprarBtn" class="btn btnLargo btnAgregar raleway" onclick="agregaralcarrito(1) ">
+                                                                Agregar
+                                                                <i class="fas fa-shopping-cart"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="ml-3 mt-3">
+                                <div class="filtros-titulo">Filtros:</div>
+                                <div class="mt-2">
+                                    <div class="select-box">
+                                        <div class="options-container">
+
+                                          <div class="option">
+                                            <input type="radio" class="radio" id="film" name="category" />
+                                            <label for="film">Precio Mayor-Menor</label>
+                                          </div>
+                                
+                                          <div class="option">
+                                            <input type="radio" class="radio" id="science" name="category" />
+                                            <label for="science">Precio Menor-Mayor</label>
+                                          </div>
+                                
+                                          <div class="option">
+                                            <input type="radio" class="radio" id="art" name="category" />
+                                            <label for="art">Nombre A-Z</label>
+                                          </div>
+                                
+                                          <div class="option">
+                                            <input type="radio" class="radio" id="music" name="category" />
+                                            <label for="music">Nombre Z-A</label>
+                                          </div>
+
+                                        </div>
+                                        
+                                        <div class="selected">
+                                            Seleccionar Filtro
+                                        </div>
+
+                                    </div>
+                                    
+
+                                
+                                </div>
+
+                                <div class="ml-3 mt-4">
+                                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                    <label for="vehicle1"> $0 - $10.000</label><br>
+                                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                    <label for="vehicle2"> $10.000 - $25.000</label><br>
+                                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                    <label for="vehicle3"> $25.000 - $70.000</label><br>
+                                </div>
+
+                            </div>
+                    </div>
+            
+            
+                    
+                    
+                </section>
+            
+                <!--==================== SECCION LISTA/CARRITO =======================-->
+                <section id="seccion-lista-carrito" class="text-center pt-5">
+
+                    <div class="row justify-content-center">    
+            
+                        <!-------------- LISTA ------------>
+                        <div id="contLista" class="col-6 mr-2">
+                            <div id="lista" class="pt-3">Lista Productos</div>
+            
+                            <div id="listaProd" class="ml-0">
+
+                            </div>
+                        </div>
+            
+                        
+                        <!---------------------------- CARRITO --------------------------------->
+                        <div id="contCarrito" class="col-4 ml-3">
+                            <div id="carrito" class="pt-3">Carrito</div>
+            
+                            <div class="raleway">
+                                <div id="cont-prod" class="display-none">Productos: 
+                                    <span class="ml-2" id="prodAgregados">
+                                    </span>
+                                </div>
+            
+                                <div id="total" class="mt-3">Total</div>
+            
+                                <div id="totalNum" class="heebo">$0</div>
+            
+                                <div class="mt-5">
+                                    <button id="btnComprar" class="btn" onclick="alertComprar()">Comprar</button>
+                                </div>
+                            </div>
+            
+                            
+                        </div>
+            
+                        
+                    </div>
+                </section>
+                </div>
+        </div>
+        <div class="col-1"></div>
+
+        <div id="seccion-about" class="col-12">
+            <div class="text-center text-white">  
+                <div id="titulo-paratexto">Sobre Nosotros</div>
+                <div id="paratexto" class="row mt-4 mb-5">
+                    <div class="col-2">
+                    </div>
+                    <div class="col-8 pt-4 pb-4">
+                        <div>Somos una tienda de instrumentos musicales con ya más de 15 años de experiencia. Tenemos el conocimiento y la capacidad como para informarte acerca de las mejores elecciones para tu compra musical.</div>
+                        <div>Compre seguro y confiado su instrumento con la mejor relación precio / calidad.</div>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+        
+            </div>
+        </div>
+
+        <div id="seccion-contacto" class="col-12">
+            <div class="row">
+                <div class="col-5">
+                    CONTACTO
+                </div>
+            </div>
+        </div>
+
+    
+    </div>
+
+    <!--========================================= SECCION FOOTER ======================================-->
+    
+    
+    
+    
+    </div>
+
+</body>
+</html>

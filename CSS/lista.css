@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@800&family=Raleway:wght@300&family=Ramabhadra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap');
+
+/*========================================== LISTA =========================================*/
+
+#contLista{
+    border-color: rgba(0, 0, 0, 0.3);
+    border-style: solid;
+    border-radius: 5%;
+    border-width: 1px;
+    height: auto;
+    width: 100%;
+    padding-bottom: 1rem;
+}   
+
+#listaProd{
+    list-style-type: none;
+}
+
+.unLi{
+    height: 30px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(175,175,175,0.2);
+}
+
+.listaBtn{
+    font-size: 10px;
+    z-index: 10;
+    position: relative;
+  
+    margin-right: 10px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  
+    text-align: center;
+    vertical-align: middle;
+  
+    border: 2px solid #444;
+    border-radius: 50%;
+  
+    color: #333;
+
+    cursor: pointer;
+}
+
+.listaBtn a .fa
+{
+	font-size: 1.5em;
+	vertical-align: middle;
+}
+
+.botonesMasMenos{
+    position: absolute;
+    right: 30px;
+}
+
+.listaBtn:hover 
+{
+  color: #fff;
+}
+
+.listaMenos::after 
+{
+  z-index: -1;
+  
+  content: "";
+  position: absolute !important;
+  top: 0px;
+  right: 0px;
+  
+  display: block;
+  width: 27px;
+  height: 28px;
+  
+  background-color: #ff4640;  
+  border-radius: 50%;
+  
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+  transition: all 0.3s ease;  
+}
+
+.listaMas::after 
+{
+  z-index: -1;
+  
+  content: "";
+  position: absolute !important;
+  top: 0px;
+  right: 0px;
+  
+  display: block;
+  width: 27px;
+  height: 28px;
+  
+  background-color: #00ab17;  
+  border-radius: 50%;
+  
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+  transition: all 0.3s ease;  
+}
+
+.listaBtn:hover::after 
+{
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.listaNombre{
+    position: absolute;
+    left: 30px;
+}
+
+.listaCant{
+    position: absolute;
+    right: 150px;
+}

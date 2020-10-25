@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@800&family=Raleway:wght@300&family=Ramabhadra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+/*===== Cards =====*/
+.sombras{
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
+}
+
+.sombras:hover{
+    transform: scale(1.022);
+    transition-duration: 300ms;
+}
+
+.sombras:hover img{
+    transform: scale(1.05);
+    transition-duration: 300ms;
+}
+
+.sombras img{
+    cursor: url(../icons/infocursor.png), pointer !important;
+}
+
+.sombras i:hover{
+    color: brown;
+    transition-duration: 200ms;
+}
+
+.centrar{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    border: 0px;
+    background: transparent;
+}
+
+.letras{
+    font-size: 25px;
+}
+
+/*==== Buscador ====*/
+
+/*Contenedor*/
+#seccion-search{
+    position: absolute;
+    right: 0;
+    /*background-color: #063146;*/
+    background-color:  rgb(202, 202, 202);
+    border-radius: 30px;
+    padding: 10px;
+}
+
+#seccion-search:hover > #buscador-text{
+    width: 300px;
+    padding: 0 6px;
+}
+
+.input-lleno{
+    width: 300px !important;
+    padding: 0 6px;
+}
+
+/*Ancla > Icono*/
+#search-btn{
+    color: black;
+    /*background-color: #063146;*/
+    background-color: rgb(202, 202, 202);
+    float: right;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration-line: none;
+    transition: 0.4s;
+}
+
+#seccion-search:hover > #search-btn{
+    
+    color: whitesmoke;
+}
+
+/*Input*/
+#buscador-text{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: black;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 30px;
+    width: 0;
+}
+
+
+
+/*===== Seccion Catalogo =====*/
+
+#seccionCatalogo{
+    position: relative;
+    margin-top: 20vh;
+}
+
+#tituCat{
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.unProducto{
+    height: 350px;
+    width: 200px;
+    margin-right: 20px;
+}
+
+#contCatalogo{
+    display: flex;
+    /*flex-direction: row;*/
+}
+
+.cartaAncho{
+    width: 200px;
+}
+
+.item{
+    width: 100%;
+    padding-top: 2;
+}
+
+#content-slider{
+    height: auto !important;
+    /*width: 2400px !important; */
+}
+
+.mr{
+    margin-right: 0px !important;
+}
+
+/*Filtros / Select / Checkboxs*/
+.filtros-titulo{
+    font-family: "Merriweather Sans";
+}
+
+.select-opciones{
+    width: 100%;
+}
+
+.select-box {
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+}
+  
+.select-box .options-container {
+    background: #063146;
+    color: #f5f6fa;
+    max-height: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 8px;
+    overflow-y: hidden;
+  
+    order: 1;
+}
+  
+.selected {
+    background: #063146;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    color: #f5f6fa;
+    position: relative;
+  
+    order: 0;
+}
+  
+.selected::after {
+    content: "";
+    background: url("../icons/arrow-down.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  
+    position: absolute;
+    height: 100%;
+    width: 32px;
+    right: 10px;
+    top: 5px;
+  
+    transition: all 0.4s;
+}
+  
+.select-box .options-container.active {
+    max-height: 240px;
+    opacity: 1;
+}
+  
+.select-box .options-container.active + .selected::after {
+    transform: rotateX(180deg);
+    top: -6px;
+}
+  
+.select-box .option,
+.selected {
+    padding: 8px 10px;
+    cursor: pointer;
+}
+  
+.select-box .option:hover {
+    background: #414b57;
+}
+  
+.select-box label {
+    cursor: pointer;
+}
+  
+.select-box .option .radio {
+    display: none;
+}
+
+/*Modal*/
+#ventana-modal{
+    position: absolute;
+    width: 35rem;
+    top: -100px;
+    transition: .4s;
+    opacity: 1;
+    
+}
+
+.bajar-modal{
+    top: 15% !important;
+}
+
+#overlay{
+    position: absolute;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200vh;
+    z-index: -1;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    transition: .4s;
+}
+
+.fondo-negro{
+    display: block !important;
+    opacity: 1 !important;
+    z-index: 30 !important;
+}
+
+.modal-dialog{
+    margin: 0 !important;
+    max-width: none;
+}
+
+#precio-modal{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: #900000;
+}
+
+#titulo-desc-modal{
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+.modal-title{
+    font-size: 1.2rem;
+    font-weight: bolder;
+}

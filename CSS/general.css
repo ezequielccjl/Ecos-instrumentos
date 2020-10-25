@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@800&family=Raleway:wght@300&family=Ramabhadra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none; 
+  }
+
+#main-container{
+    position: absolute;
+    top: 7%;
+    width: 100%;
+    background-color: rgba(200, 200, 200, 0.2);
+    
+}
+
+#container{
+    width: 100%;
+    transition: all .5s;
+}
+
+#row-container{
+    width: 100%;
+}
+
+/*Fuentes*/
+
+.merriweather{
+    font-family: "Merriweather Sans";
+}
+
+.raleway{
+    font-family: "Raleway";
+}
+
+.heebo{
+    font-family: "Heebo";
+}
+
+
+
+#carrito{
+    font-family: Merriweather Sans;
+    font-size: 45px;
+}
+
+#lista{
+    font-family: Merriweather Sans;
+    font-size: 25px;
+}
+
+#prod{
+    font-family: Raleway;
+    font-size: 25px;
+}
+
+/*==================== SECCION ABOUT ======================*/
+
+#titulo-paratexto{
+    font-family: "Merriweather Sans";
+    font-size: 40px;
+    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.5);
+
+}
+
+#paratexto{
+    font-family: "Raleway";
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/*============== HEADER PRESENTACION ===============*/
+
+.fondo{
+    position: absolute;
+    background-image: url("../imgs/fondoPrincipal.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 25vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#titulo{
+    font-family: "Staatliches";
+    /*font-family: "Merriweather Sans";*/
+    font-size: 4.5rem;
+    text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.7);
+}
+
+#titulo .weight-normal{
+    font-weight: lighter;
+}
+
+.header{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 65%;
+    z-index: 5;
+    transform: translate(-50%, -50%);
+    border-color: white;
+    border-style: solid;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+#seccion-lista-carrito{
+    margin-bottom: 15vh;
+}
+
+/*Seccion About*/
+
+#seccion-about{
+    background-image: url("../imgs-tienda/cuatro.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 70vh;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: -20;
+}
+
+
+
+
