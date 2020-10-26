@@ -1,31 +1,6 @@
-Fabrizio
-13:06
-jdjasjdjasjsd DUPLICADO
-Tú
-13:06
-anjsnadjasn colta
-Tú
-13:07
-ahi mande soli rey
-Fabrizio
-13:35
-git push --set-upstream <REPO-REMOTO> master
-Tú
-13:35
-Recibido!
-Fabrizio
-13:43
+Setear ORIGIN: 
+	git push --set-upstream <REPO-REMOTO> master
+
+Push master al repositorio remoto
 git remote add origin https://github.com/Fab-2727/PruebaUno
-Fabrizio
-13:44
-git init, añadimos archivos, los añadimos al commit, commiteamos, seteamos un origin (repo remoto), pusheamos al repo remoto a la branch master, 
-Tú
-13:47
- 7 lines (7 sloc) 72 Bytes
-nfsjanfas
-fjaskfas
-jfnajlfnas
-jnfasjfsa
-knfsajf
-	skfnajfsa
-	jlfnsajlfas
+
