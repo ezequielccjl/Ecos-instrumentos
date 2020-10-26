@@ -1,6 +1,6 @@
 Setear ORIGIN: 
-	git push --set-upstream <REPO-REMOTO> master
+git remote add origin https://github.com/Fab-2727/PruebaUno
 
 Push master al repositorio remoto
-git remote add origin https://github.com/Fab-2727/PruebaUno
+	git push --set-upstream <REPO-REMOTO> master
 
