@@ -134,6 +134,32 @@
 
     z-index: -20;
 }
+.cont-icons-pago{
+    display: flex;
+    justify-content: center;
+}
+
+.marco-icono-carrito{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.3);
+    width: 90px;
+    cursor: pointer;
+    transition: .3s;
+    
+}
+
+.marco-icono-carrito img {
+    width: 64px !important;
+}
+
+.marco-icono-carrito:hover{
+    background-color: rgba(58, 235, 27, 0.5);
+}
 
 
 

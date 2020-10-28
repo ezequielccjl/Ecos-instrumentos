@@ -25,13 +25,13 @@ window.onload = function (){
     contLista = document.getElementById("listaProd")
     snipper = document.getElementById("snipper-carga")
     
-    setTimeout(function (){
-        snipper.classList.toggle("display-none")
-        contSlider.classList.toggle("display-none")
-        cargarCatalogo();
-        cargarListaCarrito();
-        
-    },2000)
+    //setTimeout(function (){
+    //    snipper.classList.toggle("display-none")
+    //    contSlider.classList.toggle("display-none")
+    //    cargarCatalogo();
+    //    cargarListaCarrito();
+    //    
+    //},2000)
     
 }
 
