@@ -75,10 +75,6 @@ function cantEnCarrito(id){
     return contador;
 }
 
-function alertComprar(){
-    alert("Función no desarrollada.")
-}
-
 function cargarListaCatalogo(){
     $.ajax({
         url: "JSON/catalogo.json",
