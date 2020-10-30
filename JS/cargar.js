@@ -264,6 +264,20 @@ function snipperHTML() {
     `
 }
 
+function listaCarritoFinal() {
+    let listaCarritoFinal = [];
+    listaProductoCantidad().forEach(prod => {
+        if (prod.cantidad>=1) {
+            let unProd = {
+                producto: prod.producto,
+                cantidad: prod.cantidad
+            }
+            listaCarritoFinal.push(unProd)
+        }
+    });
+    return listaCarritoFinal;
+}
+
 
 
 

@@ -172,6 +172,61 @@
     opacity: 1 !important;
 }
 
+#cont-datos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+}
+
+.input-pago{
+    margin-left: 10px;
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 3px;
+    color: white;
+    font-size: 16px;
+    line-height: 30px;
+    width: 80%;
+}
+
+.span-input-pago{
+    background-color:  #680101;
+    border-radius: 30px;
+    margin-left: 2rem;
+    padding: 2px;
+    width: 80%;
+}
+
+.input-pago::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    /*rgba(255, 255, 255, 0.5)*/
+}
+
+#comprar-btn-final{
+    margin-top: 1.3rem;
+    width: 45% !important;
+    margin-left: 6rem;
+}
+
+#cont-ticket-final{
+    
+}
+
+#titulo-final-ticket{
+    font-family: "Staatliches";
+    font-size: 1.5rem;
+}
+
+.flex-column-ticket{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
 
 
 
