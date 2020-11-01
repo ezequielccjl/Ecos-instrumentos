@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function(){
         setTimeout(function(){
             contenedorSlider = document.getElementById("content-slider")
             prodBusqueda = buscador[0].value.toLowerCase();
-            console.log(prodBusqueda)
             
             cargarBusqueda(buscarProd())
             verificarInput()
@@ -41,7 +40,6 @@ function buscarProd(){
         }
     });
 
-    console.log(productosFiltrados)
     return productosFiltrados;
 }
 

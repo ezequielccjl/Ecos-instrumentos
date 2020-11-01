@@ -3,35 +3,46 @@ let contTotal;
 let contPago;
 let contFinal
 let contTicket;
+let contTicketFinal;
+let contCarrito;
 
-let btnEfectivo;
 let contDatos;
+let btnEfectivo;
 
 let comprarBtnFinal;
 let ticket;
 let ulListaProds;
 
-document.addEventListener("DOMContentLoaded", function(){
+let btnVolverTicket;
 
-    contTicket = document.querySelector("#cont-ticket")
+document.addEventListener("DOMContentLoaded", function(){
+    
     btnComprar = document.querySelector("#btnComprar")
     contTotal = $("#cont-total")
     contPago = $("#cont-pago")
+    contTicket = document.querySelector("#cont-ticket")
+    contTicketFinal = $("#cont-ticket-final")
+    contCarrito = document.querySelector("#contCarrito")
     contDatos = $("#cont-datos")
 
-    
+    //
     contPago.fadeOut()
     contDatos.fadeOut()
+    contTicketFinal.fadeOut()
 
     btnComprar.addEventListener("click", ()=>{
-        
-        contTotal.fadeOut()
-        setTimeout(function () {
-            contPago.fadeIn()
+        if (listaCarrito.length>=1) {
+            sessionStorage.ProcesoDePago = "true";
+            contTotal.fadeOut()
+            setTimeout(function () {
+                contPago.fadeIn()
 
-            pasarDatosParaPago()
-            
-        },500)
+                pasarDatosParaPago()
+                
+            },500)
+        }else{
+            alertCustom("No hay productos en su carrito.")
+        }
 
     })
 })
@@ -83,7 +94,6 @@ function submitDatos() {
                 alertCustom('Ingrese un teléfono adecuado')
             }else{
                 //Esto sucede una vez que los campos son completados y el telefono valido
-                console.log("tel valido")
                 ticket = {
                     nombre: $(".input-pago")[0].value,
                     telefono: $(".input-pago")[1].value,
@@ -92,15 +102,27 @@ function submitDatos() {
                     compra: listaCarrito
                 }
 
-                console.log(ticket)
-
                 contDatos.fadeOut()
 
                 setTimeout(function () {
+
                     $("#carrito").slideUp()
-                    contTicket.innerHTML = renderTicket();
+                    contCarrito.classList.toggle("height-auto")
+                    contTicketFinal.fadeIn();
+                    
+                    document.querySelector("#nombre").innerHTML = `<span class="bolder">Nombre:</span> ${ticket.nombre}`
+                    document.querySelector("#telefono").innerHTML = `<span class="bolder">Teléfono:</span> ${ticket.telefono}`
+                    document.querySelector("#direccion").innerHTML = `<span class="bolder">Dirección:</span> ${ticket.direccion}`
+                    document.querySelector("#descripcion").innerHTML = `<span class="bolder">Descripción:</span> ${ticket.descripcion}`
+                    document.querySelector("#total-pago-ticket").innerHTML = `Total: $${calcularTotal()}`
+                    
                     ulListaProds = document.querySelector("#lista-prod-ticket");
+                    
                     ulListaProds.innerHTML = renderProds();
+
+                    btnVolverTicket = document.querySelector("#volver-ticket")
+
+                    eventoVolver();
                     
                 },500)
             }
@@ -125,15 +147,43 @@ function renderTicket() {
         <div id="titulo-final-ticket">COMPRA REALIZADA CON EXITO!!</div>
         <div class="mt-2 mb-2"><img src="../icons/en-camino.png" alt=""></div>
         <div class="flex-column-ticket raleway">
-            <span>Nombre: ${ticket.nombre}</span>
-            <span>Teléfono: ${ticket.telefono}</span>
-            <span>Dirección: ${ticket.direccion}</span>
-            <span>Descripción: ${ticket.descripcion}</span>
-            <div>Lista:</div>
-            <ul id="lista-prod-ticket">
-                
-            </ul>
+            <span><span class="bolder">Nombre:</span> ${ticket.nombre}</span>
+            <span><span class="bolder">Teléfono:</span> ${ticket.telefono}</span>
+            <span><span class="bolder">Dirección:</span> ${ticket.direccion}</span>
+            <span><span class="bolder">Descripción:</span> ${ticket.descripcion}</span>
+            <div class="bolder">Lista:</div>
+            <ul id="lista-prod-ticket"></ul>
+            <span id="total-pago-ticket">Total: $${calcularTotal()}</span>
+
+            <button id="volver-ticket" class="btn btnLargo btnAgregar raleway">
+                Volver
+            </button>
+            
         </div>
+    </div>
+    `
+}
+
+function renderInicio() {
+    return `
+            
+    <div id="cont-ticket">
+        <div id="cont-total" class="raleway">
+            <div id="cont-prod" class="display-none">Productos: 
+                <span class="ml-2" id="prodAgregados">
+                </span>
+            </div>
+                
+            <div id="total" class="mt-3">Total</div>
+                
+            <div id="totalNum" class="heebo">$0</div>
+                
+            <div class="mt-5">
+                <button id="btnComprar" class="btn">Comprar</button>
+            </div>
+                                    
+        </div>
+                                    
     </div>
     `
 }
@@ -146,4 +196,21 @@ function renderProds()  {
     });
 
     return htmlProd;
+}
+
+function eventoVolver(){
+    btnVolverTicket.addEventListener("click", ()=>{
+        sessionStorage.ProcesoDePago = "false";
+        
+        contTicketFinal.fadeOut()
+        setTimeout(function () {
+            $("#carrito").slideDown()
+            contTotal.fadeIn()
+            //contCarrito.innerHTML = renderInicio()
+            contCarrito.classList.toggle("height-auto")
+            //modificarTotal()
+            
+        },500)
+
+    })
 }

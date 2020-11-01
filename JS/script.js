@@ -6,6 +6,8 @@ let totalPagar;
 let prodAgregados;
 let contProd;
 
+sessionStorage.setItem('ProcesoDePago', 'false');
+
 document.addEventListener("DOMContentLoaded", function(){
     parrafo = document.getElementById("agrego")
     totalPagar = document.getElementById("totalNum")
@@ -20,19 +22,23 @@ document.addEventListener("DOMContentLoaded", function(){
 /*==============================================================================================*/
 
 function agregaralcarrito(idProd){
-    mostrarNotif();
-    listaCatalogo.forEach(prod => {
-        if (prod.id == idProd) {
-            listaCarrito.push(prod);
-        }
-    });
-    mostrarProdsAgregados();
+    if (sessionStorage.ProcesoDePago == "false") {
+        mostrarNotif();
+        listaCatalogo.forEach(prod => {
+            if (prod.id == idProd) {
+                listaCarrito.push(prod);
+            }
+        });
+        mostrarProdsAgregados();
 
-    actualizaLista()
-    //==================== STORAGE
-    let cantidad = cantEnCarrito(idProd)
+        actualizaLista()
+        //==================== STORAGE
+        let cantidad = cantEnCarrito(idProd)
 
-    localStorage.setItem(idProd, cantidad);
+        localStorage.setItem(idProd, cantidad);   
+    }else{
+        alertCustom("No se pueden agregar productos mientras realiza una compra")
+    }
 }
 
 function calcularTotal(){
@@ -50,16 +56,21 @@ function modificarTotal(){
 
 function mostrarProdsAgregados(){
     prodAgregados.innerHTML = " ";
+    document.querySelector(".dot").innerHTML = " ";
 
     let contador = listaCarrito.length;
 
     prodAgregados.innerHTML = `${contador}`
+    document.querySelector(".dot").innerHTML = `${contador}`
 
     if (contador>=1) {
         contProd.classList.remove("display-none");
+        document.querySelector(".dot").classList.remove("display-none")
 
     }else if(contador==0){
         contProd.classList.add("display-none")
+        document.querySelector(".dot").classList.add("display-none")
+
     }
 
     modificarTotal();

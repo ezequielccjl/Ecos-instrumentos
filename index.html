@@ -75,8 +75,9 @@
     <!--======================================= SECCION NAV Y HEADER =======================================-->
 
     <nav class="fixed">
-        <a href="" id="carrito-nav">
+        <a href="#seccion-lista-carrito" id="carrito-nav">
             <img src="icons/cart-36px.png" alt="cart">
+            <div class="dot display-none"></div>
         </a>
         <div class="disparador">Ecos Music</div>
         
@@ -268,7 +269,9 @@
                         <div id="contCarrito" class="col-4 ml-3">
                             <div id="carrito" class="pt-3">Carrito</div>
             
+                            <!-- Contenedor de las 4 fases para realizar una compra -->
                             <div id="cont-ticket">
+                                <!-- Contenedor inicial con Total a pagar y productos listados -->
                                 <div id="cont-total" class="raleway">
                                     <div id="cont-prod" class="display-none">Productos: 
                                         <span class="ml-2" id="prodAgregados">
@@ -284,6 +287,7 @@
                                     </div>
                                     
                                 </div>
+                                <!-- Contenerdor metodos de pago -->
                                 <div id="cont-pago">
                                     <div id="titulo-pago" class="mt-2 raleway">Elija medio de pago</div>
                                     <div class="cont-icons-pago mt-3">
@@ -299,6 +303,7 @@
                                     
                                     
                                 </div>
+                                <!-- Contenedor con inputs para crear objeto ticket -->
                                 <div id="cont-datos" class="mt-1">
                                     <div class="mb-2 raleway">Ingrese sus datos:</div>
                                     <span class="span-input-pago ">
@@ -322,6 +327,25 @@
                                         <i class="fas fa-shopping-cart"></i>
                                     </button>
                     
+                                </div>
+                                <!-- Ticket final con objeto ticket -->
+                                <div id="cont-ticket-final" class="mt-3">
+                                    <div id="titulo-final-ticket">COMPRA REALIZADA CON EXITO!!</div>
+                                    <div class="mt-2 mb-2"><img src="../icons/en-camino.png" alt=""></div>
+                                    <div class="flex-column-ticket raleway">
+                                        <span id="nombre" class="resul"></span>
+                                        <span id="telefono" class="resul"></span>
+                                        <span id="direccion" class="resul"></span>
+                                        <span id="descripcion" class="resul"></span>
+                                        <div class="bolder">Lista:</div>
+                                        <ul id="lista-prod-ticket"></ul>
+                                        <span id="total-pago-ticket"></span>
+                            
+                                        <button id="volver-ticket" class="btn btnLargo btnAgregar raleway">
+                                            Volver
+                                        </button>
+                                        
+                                    </div>
                                 </div>
                                 
                                 

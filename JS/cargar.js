@@ -197,20 +197,24 @@ function llenarBtnMenos(){
 function restarUnProducto(){
     listaBotonesMenos.forEach(boton => {
         boton.addEventListener("click", function(){
-            let prodParaRestar;
-            nombreProd = boton.offsetParent.parentElement.children[0].textContent;
-
-            listaCatalogo.forEach(prod => {
-                if (prod.nombre == nombreProd) {
-                    prodParaRestar = prod;
-                }
-            });
-
-            let indiceProdBorrar = listaCarrito.indexOf(prodParaRestar)
-            listaCarrito.splice(indiceProdBorrar,1)
-
-            mostrarProdsAgregados();
-            actualizaLista()
+            if (sessionStorage.ProcesoDePago == "false") {
+                let prodParaRestar;
+                nombreProd = boton.offsetParent.parentElement.children[0].textContent;
+    
+                listaCatalogo.forEach(prod => {
+                    if (prod.nombre == nombreProd) {
+                        prodParaRestar = prod;
+                    }
+                });
+    
+                let indiceProdBorrar = listaCarrito.indexOf(prodParaRestar)
+                listaCarrito.splice(indiceProdBorrar,1)
+    
+                mostrarProdsAgregados();
+                actualizaLista()
+            }else{
+                alertCustom("No se pueden restar productos mientras realiza una compra")
+            }
         })
     });
 }
@@ -218,23 +222,26 @@ function restarUnProducto(){
 function sumarUnProducto(){
     listaBotonesMas.forEach(boton => {
         boton.addEventListener("click", function(){
-            
-            let prodParaAgregar;
-            nombreProd = boton.parentNode.parentElement.children[0].textContent;
-            
-
-            listaCatalogo.forEach(prod => {
-                if (prod.nombre == nombreProd) {
-                    prodParaAgregar = prod;
-                    return;
-                }
-            });
-            listaCarrito.push(prodParaAgregar);
-            mostrarProdsAgregados();
-
-            prodListados = document.querySelectorAll(".unLi")
-            
-            actualizaLista()
+            if (sessionStorage.ProcesoDePago == "false") {
+                let prodParaAgregar;
+                nombreProd = boton.parentNode.parentElement.children[0].textContent;
+                
+    
+                listaCatalogo.forEach(prod => {
+                    if (prod.nombre == nombreProd) {
+                        prodParaAgregar = prod;
+                        return;
+                    }
+                });
+                listaCarrito.push(prodParaAgregar);
+                mostrarProdsAgregados();
+    
+                prodListados = document.querySelectorAll(".unLi")
+                
+                actualizaLista()
+            }else{
+                alertCustom("No se pueden agregar productos mientras realiza una compra")
+            }
             
         })
     });
@@ -246,21 +253,6 @@ function listaUL() {
         <ul id="content-slider" class="content-slider pt-2">
         </ul>
     </div
-    `
-}
-
-function snipperHTML() {
-    return `
-    <div id="snipper-carga" class="row">
-        <div class="col-12">
-            <div class="sk-folding-cube">
-                <div class="sk-cube1 sk-cube"></div>
-                <div class="sk-cube2 sk-cube"></div>
-                <div class="sk-cube4 sk-cube"></div>
-                <div class="sk-cube3 sk-cube"></div>
-            </div>
-        </div>
-    </div>
     `
 }
 

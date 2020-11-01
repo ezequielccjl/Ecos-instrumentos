@@ -210,8 +210,10 @@
     margin-left: 6rem;
 }
 
-#cont-ticket-final{
-    
+#total-pago-ticket{
+    font-family: "Heebo";
+    font-weight: bolder;
+    color: #680101;
 }
 
 #titulo-final-ticket{
@@ -222,6 +224,27 @@
 .flex-column-ticket{
     display: flex;
     flex-direction: column;
+}
+
+.bolder{
+    font-weight: bolder;
+}
+
+#volver-ticket{
+    margin-top: 1.2rem;
+}
+
+.dot {
+    height: 25px;
+    width: 26px;
+    background-color:#200000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    color: white;
+    margin-top: 0.7rem;
 }
 
 

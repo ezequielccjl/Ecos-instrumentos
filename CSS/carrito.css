@@ -10,6 +10,11 @@
     border-width: 1px;
     height: 400px;
     width: 100%;
+    padding-bottom: 2rem;
+}
+
+.height-auto{
+    height: auto !important;
 }
 
 #total{
