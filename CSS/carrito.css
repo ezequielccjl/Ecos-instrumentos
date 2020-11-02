@@ -101,6 +101,119 @@ body.swal2-toast-shown .swal2-container.swal2-top-end, body.swal2-toast-shown .s
     top: 7vh !important;
 }
 
+/*FUNCION PAGAR*/
+
+.cont-icons-pago{
+    display: flex;
+    justify-content: center;
+}
+
+.marco-icono-carrito{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.3);
+    width: 90px;
+    cursor: pointer;
+    transition: .3s;
+    
+}
+
+.marco-icono-carrito img {
+    width: 64px !important;
+}
+
+.marco-icono-carrito:hover{
+    background-color: rgba(58, 235, 27, 0.3);
+}
+
+#titulo-pago{
+    font-size: 1.2rem;
+}
+
+.opacity-uno{
+    opacity: 1 !important;
+}
+
+#cont-datos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+}
+
+.input-pago{
+    margin-left: 10px;
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 3px;
+    color: white;
+    font-size: 16px;
+    line-height: 30px;
+    width: 80%;
+}
+
+.span-input-pago{
+    background-color:  #680101;
+    border-radius: 30px;
+    margin-left: 2rem;
+    padding: 2px;
+    width: 80%;
+}
+
+.input-pago::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#comprar-btn-final{
+    margin-top: 1.3rem;
+    width: 45% !important;
+    margin-left: 6rem;
+}
+
+#total-pago-ticket{
+    font-family: "Heebo";
+    font-weight: bolder;
+    color: #680101;
+}
+
+#titulo-final-ticket{
+    font-family: "Staatliches";
+    font-size: 1.5rem;
+}
+
+.flex-column-ticket{
+    display: flex;
+    flex-direction: column;
+}
+
+.bolder{
+    font-weight: bolder;
+}
+
+#volver-ticket{
+    margin-top: 1.2rem;
+}
+
+.dot {
+    height: 23px;
+    width: 24px;
+    background-color:#200000a2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    color: white;
+    margin-top: 1rem;
+    margin-left: -1.2rem;
+    z-index: 26;
+}
+
 
 
 

@@ -235,7 +235,7 @@ function sumarUnProducto(){
                 });
                 listaCarrito.push(prodParaAgregar);
                 mostrarProdsAgregados();
-    
+                mostrarNotif();
                 prodListados = document.querySelectorAll(".unLi")
                 
                 actualizaLista()

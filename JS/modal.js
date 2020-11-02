@@ -58,10 +58,6 @@ function bajarModal() {
   overlay.classList.toggle("fondo-negro")
   ventanaModal.classList.toggle("bajar-modal");
   ventanaModal.innerHTML = htmlModal()
-  btnCerrarModal = document.querySelector("#boton-cerrar-modal")
-  btnCerrarModal.addEventListener("click", ()=>{
-    toggleFondo();
-  })
 }
 
 //Div del Modal

@@ -75,7 +75,7 @@ nav{
 
     .hamburguer{
         position: absolute;
-        height: 30px;
+        height: 7vh;
         width: 30px;
         cursor: pointer;
         right: 2%;
@@ -125,7 +125,7 @@ nav{
         right: -350px;
         width: 350px;
         height: 93%;
-        background: #042331;
+        background: #390303;
         transition: all .5s ease;
         bottom: 0%;
     }
@@ -163,7 +163,7 @@ nav{
         color: white;
         line-height: 70px;
         align-items: center;
-        background: #063146;
+        background:  #690000;
         user-select: none;
         font-weight: bold;
     }
@@ -172,7 +172,7 @@ nav{
         float: left;
         width: 65px;
         height: 65px;
-        background-color: #063146;
+        background-color:  #690000;
 
         display: flex;
         justify-content: center;

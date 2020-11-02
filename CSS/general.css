@@ -135,55 +135,58 @@
     z-index: -20;
 }
 
-/*FUNCION PAGAR*/
-
-.cont-icons-pago{
-    display: flex;
-    justify-content: center;
+/*Seccion Footer*/
+#seccion-footer{
+    height: 40vh;
+    background: #300000;
 }
 
-.marco-icono-carrito{
+#img-footer{
+    height: 25vh;
+    margin-left: -1rem;
+}
+
+.cont-logo-footer{
+    color: white;
+    font-family: "Staatliches";
+    font-size: 1.7rem;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    border-style: solid;
-    border-radius: 10px;
-    border-width: 1px;
-    border-color: rgba(0, 0, 0, 0.3);
-    width: 90px;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.dflex-justify-align{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+#seccion-footer .titulo{
+    font-family: "Staatliches";
+    font-size: 1.7rem;
+    color: white;
+}
+
+#seccion-footer i{
     cursor: pointer;
-    transition: .3s;
-    
 }
 
-.marco-icono-carrito img {
-    width: 64px !important;
+.div-input-newsletter{
+    background-color:  #680101;
+    border-radius: 30px;
+    padding: 5px;
+    width: 80%;
 }
 
-.marco-icono-carrito:hover{
-    background-color: rgba(58, 235, 27, 0.3);
-}
-
-#titulo-pago{
-    font-size: 1.2rem;
-}
-
-.opacity-uno{
-    opacity: 1 !important;
-}
-
-#cont-datos{
-    display: flex;
-    flex-direction: column;
-    justify-content: center !important;
-}
-
-.input-pago{
+.input-newsletter{
     margin-left: 10px;
     border: none;
     background: none;
     outline: none;
-    float: left;
     padding: 3px;
     color: white;
     font-size: 16px;
@@ -191,63 +194,27 @@
     width: 80%;
 }
 
-.span-input-pago{
-    background-color:  #680101;
-    border-radius: 30px;
-    margin-left: 2rem;
-    padding: 2px;
-    width: 80%;
-}
-
-.input-pago::placeholder {
+.input-newsletter::placeholder {
     color: rgba(255, 255, 255, 0.5);
-    /*rgba(255, 255, 255, 0.5)*/
 }
 
-#comprar-btn-final{
-    margin-top: 1.3rem;
-    width: 45% !important;
-    margin-left: 6rem;
+#copy{
+    margin-top: -1rem;
+    color: rgba(255, 255, 255, 0.5);
 }
 
-#total-pago-ticket{
-    font-family: "Heebo";
-    font-weight: bolder;
-    color: #680101;
-}
-
-#titulo-final-ticket{
-    font-family: "Staatliches";
-    font-size: 1.5rem;
-}
-
-.flex-column-ticket{
-    display: flex;
-    flex-direction: column;
-}
-
-.bolder{
-    font-weight: bolder;
-}
-
-#volver-ticket{
-    margin-top: 1.2rem;
-}
-
-.dot {
-    height: 25px;
-    width: 26px;
-    background-color:#200000;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 13px;
+.boton-sub{
+    margin-top: 1rem;
     color: white;
-    margin-top: 0.7rem;
+    background-color: rgb(0, 38, 48);
+    transition: .5s;
+    border-radius: 20px;
 }
 
-
+.boton-sub:hover{
+    color: wheat;
+    background-color: rgb(0, 61, 43) !important;
+}
 
 
 
