@@ -64,7 +64,7 @@ function bajarModal() {
 function htmlModal() {
     return `
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
+      <div class="modal-content card-night">
         <div class="modal-header">
           <h5 class="modal-title">${fullProduct.nombre}</h5>
           
@@ -82,7 +82,7 @@ function htmlModal() {
           </div> 
         </div>
         <div class="modal-footer">
-            <button id="comprarBtn" class="btn btnLargo btnAgregar raleway" onclick="agregaralcarrito(${fullProduct.id}) ">
+            <button id="comprarBtn" class="btn btnLargo btnAgregar raleway border-night" onclick="agregaralcarrito(${fullProduct.id}) ">
               Agregar
               <i class="fas fa-shopping-cart"></i>
             </button>

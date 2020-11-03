@@ -1,0 +1,33 @@
+.body-font-night{
+    color: white;
+}
+.catalogo-carrito{
+    background-color: #151515;
+}
+
+.card-night{
+    background-color: rgb(61, 61, 61) !important;
+}
+
+.border-night{
+    border-color: rgba(255, 254, 254, 0.5) !important;
+    color: white !important;
+}
+
+.seccion-tiendas-night{
+    background-color: #151515 !important;
+}
+
+.btn-lista-night{
+    color: white;
+    border-color: rgba(255, 255, 255, 0.61);
+}
+
+.swal2-popup.swal2-toast{
+    color: white !important;
+    background-color: rgb(61, 61, 61) !important;
+}
+
+.swal2-title{
+    color: white !important;
+}

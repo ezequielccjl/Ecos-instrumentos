@@ -17,14 +17,6 @@
     },
     {
       "id": 3,
-      "nombre": "Bateria Yamaha Custom Birch",
-      "precio": 30050,
-      "imagen": "../imgsCat/yamahacustom.png",
-      "alt": "bateria-yamaha",
-      "desc": "La batería Yamaha Stage Custom es ideal para principiantes o profesionales. El sistema de sellado de aire de Yamaha garantiza que todas y cada una de las cubiertas de la batería Yamaha tengan un grosor uniforme y sean perfectamente redondas para lograr una calidad de tono y una durabilidad superiores."
-    },
-    {
-      "id": 4,
       "nombre": "Piano Digital Yamaha YDP-144",
       "precio": 30180,
       "imagen": "../imgsCat/yamahadigital.png",
@@ -32,7 +24,7 @@
       "desc": "El piano digital YDP-144 proporciona un toque y un tono de piano auténticos adecuados para cualquier aspirante a pianista. Yamaha garantiza un tono completo y equilibrado a cualquier volumen. El gabinete de 42 pulgadas del Arius YDP-144 le da un aspecto de piano clásico a cualquier interior de hogar."
     },
     {
-      "id": 5,
+      "id": 4,
       "nombre": "Sintetizador Moog Subsequent 37",
       "precio": 62100,
       "imagen": "../imgsCat/moog.png",
@@ -40,7 +32,7 @@
       "desc": "El Subsequent 37 es un sintetizador analógico parafónico (2 notas) que se basa en el diseño del Sub 37 Tribute Edition. Su panel de control tiene 40 perillas y 74 interruptores, lo que coloca una amplia gama de herramientas de diseño de sonido analógico y opciones de secuenciación integradas a su disposición."
     },
     {
-      "id": 6,
+      "id": 5,
       "nombre": "Sintetizador Modulo Roland JU-06A",
       "precio": 41500,
       "imagen": "../imgsCat/ju06a.png",
@@ -48,12 +40,20 @@
       "desc": "Los sintetizadores Roland JUNO definieron el sonido de los 80. Muchos músicos quieren uno o lamentan haberlo vendido en el pasado. Con el JU-06A obtienes el sonido, la apariencia y las características del JUNO-60 y JUNO-106 en un instrumento moderno y confiable que puedes llevar a cualquier parte."
     },
     {
-      "id": 7,
+      "id": 6,
       "nombre": "Amplificador Orange 12W Crush12",
       "precio": 12900,
       "imagen": "../imgsCat/orange.png",
       "alt": "amp-orange",
       "desc": "El Orange Crush Mini se rediseñó para darle un tono Orange en un amplificador pequeño y liviano. El panel de control rediseñado le brinda un control tonal completo con ganancia, forma y volumen."
+    },
+    {
+      "id": 7,
+      "nombre": "Bateria Yamaha Custom Birch",
+      "precio": 30050,
+      "imagen": "../imgsCat/yamahacustom.png",
+      "alt": "bateria-yamaha",
+      "desc": "La batería Yamaha Stage Custom es ideal para principiantes o profesionales. El sistema de sellado de aire de Yamaha garantiza que todas y cada una de las cubiertas de la batería Yamaha tengan un grosor uniforme y sean perfectamente redondas para lograr una calidad de tono y una durabilidad superiores."
     },
     {
       "id": 8,

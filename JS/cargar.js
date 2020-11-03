@@ -61,7 +61,7 @@ function htmlCatalogo(prod){
     return `
     <li id="${prod.id}" class="mr">
         <div class="unProducto">
-            <div class="card text-center sombras cartaAncho">
+            <div class="card text-center sombras cartaAncho card-night">
                 <img class="card img-top centrar" src="${prod.imagen}" alt="${prod.alt}" width="50%" height="150px">
 
                 <div class="card-body heebo">
@@ -70,7 +70,7 @@ function htmlCatalogo(prod){
                         <span class="font-weight-bold">$${prod.precio}</span>
                     </p>
                     <div class="row m-0 p-0 btnMasMenos mt-2 justify-content-center">
-                        <button id="comprarBtn" class="btn btnLargo btnAgregar raleway" onclick="agregaralcarrito(${prod.id}) ">
+                        <button id="comprarBtn" class="btn btnLargo btnAgregar raleway border-night" onclick="agregaralcarrito(${prod.id}) ">
                             Agregar
                             <i class="fas fa-shopping-cart"></i>
                         </button>
@@ -138,8 +138,8 @@ function htmlListaUnidad(nombre, cantidad){
             <span class="listaCant">${cantidad}</span>
                         
             <span class="botonesMasMenos">
-            <a class="listaBtn listaMas"><i class="fas fa-plus"></i></a>
-            <a class="listaBtn listaMenos"><i class="fas fa-minus"></i></a>
+            <a class="listaBtn listaMas btn-lista-night"><i class="fas fa-plus"></i></a>
+            <a class="listaBtn listaMenos btn-lista-night"><i class="fas fa-minus"></i></a>
             </span>
 
         </div>

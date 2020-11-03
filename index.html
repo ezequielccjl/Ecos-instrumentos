@@ -50,6 +50,7 @@
     <link rel="stylesheet" href="CSS/lista.css">
     <link rel="stylesheet" href="CSS/catalogo.css">
     <link rel="stylesheet" href="CSS/contacto.css">
+    <link rel="stylesheet" href="/CSS/night-mode.css">
 
     <link rel="shortcut icon" type="image/png" href="imgs/guitarra.png">
     
@@ -66,10 +67,10 @@
 </head>
 
 
-<body>
+<body class="body-font-night">
     
     <div id="overlay">
-        <div id="ventana-modal"></div>
+        <div id="ventana-modal" ></div>
     </div>
     
     <!--======================================= SECCION NAV Y HEADER =======================================-->
@@ -131,8 +132,8 @@
     </div>
     
     <div id="row-container" class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
+        <div class="col-1 catalogo-carrito"></div>
+        <div class="col-10 catalogo-carrito">
             <div id="container">
 
                 <!--================= SECCION CATALOGO ======================-->
@@ -175,7 +176,7 @@
                                         <li>
                                             <div class="unProducto mb-5">
                                                 <div class="card text-center sombras cartaAncho">
-                                                    <img class="card img-top centrar" src="imgsCat/sg.png" alt="2" width="50%" height="150px">
+                                                    <img class="card img-top centrar " src="imgsCat/sg.png" alt="2" width="50%" height="150px">
                                             
                                                     <div class="card-body heebo">
                                                         <p class="mb-1">Epiphone 1966 G-400</p>
@@ -256,7 +257,7 @@
                     <div class="row justify-content-center">    
             
                         <!-------------- LISTA ------------>
-                        <div id="contLista" class="col-6 mr-2">
+                        <div id="contLista" class="col-6 mr-2 border-night">
                             <div id="lista" class="pt-3">Lista Productos</div>
             
                             <div id="listaProd" class="ml-0">
@@ -266,7 +267,7 @@
             
                         
                         <!---------------------------- CARRITO --------------------------------->
-                        <div id="contCarrito" class="col-4 ml-3">
+                        <div id="contCarrito" class="col-4 ml-3 border-night">
                             <div id="carrito" class="pt-3">Carrito</div>
             
                             <!-- Contenedor de las 4 fases para realizar una compra -->
@@ -283,7 +284,7 @@
                                     <div id="totalNum" class="heebo">$0</div>
                 
                                     <div class="mt-5">
-                                        <button id="btnComprar" class="btn">Comprar</button>
+                                        <button id="btnComprar" class="btn border-night">Comprar</button>
                                     </div>
                                     
                                 </div>
@@ -291,11 +292,11 @@
                                 <div id="cont-pago">
                                     <div id="titulo-pago" class="mt-2 raleway">Elija medio de pago</div>
                                     <div class="cont-icons-pago mt-3">
-                                        <span class="marco-icono-carrito p-2">
+                                        <span class="marco-icono-carrito p-2 border-night">
                                             <img src="icons/money.png" alt="icon-efect" class="pl-1">
                                             <span class="titulo-pago">Efectivo</span>
                                         </span>
-                                        <span class="marco-icono-carrito ml-5 p-2">
+                                        <span class="marco-icono-carrito ml-5 p-2 border-night">
                                             <img src="icons/icons8-paypal-64.png" alt="icon-paypal" class="pl-1">
                                             <span class="titulo-pago">Paypal</span>
                                         </span>
@@ -322,7 +323,7 @@
                                         <input id="des" class="input-pago" type="text" name="pago" placeholder="Descripción Casa (OPCIONAL)">
                                     </span> 
 
-                                    <button id="comprar-btn-final" class="btn btnLargo btnAgregar raleway">
+                                    <button id="comprar-btn-final" class="btn btnLargo btnAgregar raleway border-night">
                                         Comprar
                                         <i class="fas fa-shopping-cart"></i>
                                     </button>
@@ -341,7 +342,7 @@
                                         <ul id="lista-prod-ticket"></ul>
                                         <span id="total-pago-ticket"></span>
                             
-                                        <button id="volver-ticket" class="btn btnLargo btnAgregar raleway">
+                                        <button id="volver-ticket" class="btn btnLargo btnAgregar raleway border-night">
                                             Volver
                                         </button>
                                         
@@ -361,7 +362,7 @@
                 </section>
                 </div>
         </div>
-        <div class="col-1"></div>
+        <div class="col-1 catalogo-carrito"></div>
 
 
         <div id="seccion-about" class="col-12">
@@ -379,13 +380,14 @@
         
             </div>
         </div>
-        <div class="col-12">
-            <div class="titulo-tiendas text-center">Algunas de nuestras tiendas...</div>
-        </div>
-        <div id="seccion-contacto" class="col-12">
+        
+        <div id="seccion-contacto" class="col-12 seccion-tiendas-night">
             <div class="row">
-                <div class="col-2"></div>
-                <div class="col-8">
+                <div class="col-12">
+                    <div class="titulo-tiendas text-center mb-2 seccion-tiendas-night">Algunas de nuestras tiendas...</div>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-10 pl-5 pr-5">
                     
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
@@ -426,7 +428,7 @@
                         </a>
                       </div>
                 </div>
-                <div class="col-2"></div>
+                <div class="col-1"></div>
             </div>
         </div>
 
