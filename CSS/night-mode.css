@@ -1,17 +1,69 @@
+.cont-brightmode{
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+.luna{
+    opacity: 0;
+    background-color: #151515;
+    z-index: 1000;
+}
+
+.sol{
+    opacity: 0;
+    z-index: 1000;
+    background-color:rgb(241, 241, 241);
+
+}
+
+.opacityUno{
+    opacity: 1;
+}
+
 .body-font-night{
     color: white;
 }
-.catalogo-carrito{
+.catalogo-carrito-night{
     background-color: #151515;
 }
 
 .card-night{
     background-color: rgb(61, 61, 61) !important;
+    border-color: rgba(255, 254, 254, 0.2);
+    box-shadow: 2px 2px 3px rgba(255, 255, 255, 0.2) !important;
+}
+
+.card-night .btnAgregar{
+    border-color: rgba(255, 254, 254, 0.5) !important;
+    color: white !important;
 }
 
 .border-night{
     border-color: rgba(255, 254, 254, 0.5) !important;
     color: white !important;
+}
+
+.border-night .listaBtn{
+    color: white;
+    border-color: rgba(255, 255, 255, 0.61);
+}
+
+.border-night #btnComprar:hover{
+    border-color: brown !important;
+}
+
+.card-night #comprarBtn:hover{
+    border-color: brown !important;
+}
+
+.card-night #comprarBtn:hover i{
+    color: brown;
 }
 
 .seccion-tiendas-night{
@@ -23,11 +75,13 @@
     border-color: rgba(255, 255, 255, 0.61);
 }
 
-.swal2-popup.swal2-toast{
+
+.body-font-night .swal2-popup.swal2-toast{
     color: white !important;
     background-color: rgb(61, 61, 61) !important;
 }
 
-.swal2-title{
+
+.body-font-night .swal2-title{
     color: white !important;
 }

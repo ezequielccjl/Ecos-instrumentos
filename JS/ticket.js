@@ -18,6 +18,7 @@ let btnVolverTicket;
 document.addEventListener("DOMContentLoaded", function(){
     
     btnComprar = document.querySelector("#btnComprar")
+    btnEfectivo = document.querySelectorAll(".marco-icono-carrito")
     contTotal = $("#cont-total")
     contPago = $("#cont-pago")
     contTicket = document.querySelector("#cont-ticket")
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 
 function pasarDatosParaPago() {
-    btnEfectivo = document.querySelectorAll(".marco-icono-carrito")
+    
     
 
     btnEfectivo.forEach(btn => {

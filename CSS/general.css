@@ -57,22 +57,6 @@
     font-size: 25px;
 }
 
-/*==================== SECCION ABOUT ======================*/
-
-#titulo-paratexto{
-    font-family: "Merriweather Sans";
-    font-size: 40px;
-    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.5);
-
-}
-
-#paratexto{
-    font-family: "Raleway";
-    font-size: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-
 /*============== HEADER PRESENTACION ===============*/
 
 .fondo{
@@ -121,6 +105,19 @@
 }
 
 /*Seccion About*/
+
+#titulo-paratexto{
+    font-family: "Merriweather Sans";
+    font-size: 40px;
+    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.5);
+
+}
+
+#paratexto{
+    font-family: "Raleway";
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
 
 #seccion-about{
     background-image: url("../imgs-tienda/cuatro.jpg");
@@ -217,6 +214,25 @@
     background-color: rgb(0, 61, 43) !important;
 }
 
+/*Seccion Tiendas*/
+
+#seccion-contacto{
+    display: flex;
+    width: 100%;
+    background-color:rgba(200, 200, 200, 0.2);
+    justify-content: center;
+    padding-bottom: 3rem;
+}
+
+.titulo-tiendas{
+    padding-top: 2rem;
+    font-size: 2rem;
+    font-family: "Merriweather Sans";
+}
+
+.carousel-caption{
+    background-color:rgba(0, 0, 0, 0.5);
+}
 
 
 

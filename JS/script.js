@@ -1,4 +1,4 @@
-var listaCarrito = [];
+//var listaCarrito = [];
 let listaCatalogo = [];
 
 let parrafo;
@@ -7,12 +7,19 @@ let prodAgregados;
 let contProd;
 
 sessionStorage.setItem('ProcesoDePago', 'false');
+let listaCarrito = localStorage.listaCarrito ? JSON.parse(localStorage.listaCarrito) : [];
+
+
+
 
 document.addEventListener("DOMContentLoaded", function(){
+
     parrafo = document.getElementById("agrego")
     totalPagar = document.getElementById("totalNum")
     prodAgregados = document.getElementById("prodAgregados")
     contProd = document.getElementById("cont-prod")
+
+    
 
 
     cargarListaCatalogo()
@@ -35,7 +42,9 @@ function agregaralcarrito(idProd){
         //==================== STORAGE
         let cantidad = cantEnCarrito(idProd)
 
-        localStorage.setItem(idProd, cantidad);   
+        //localStorage.setItem(idProd, cantidad);  
+        localStorage.listaCarrito = JSON.stringify(listaCarrito);
+
     }else{
         alertCustom("No se pueden agregar productos mientras realiza una compra")
     }

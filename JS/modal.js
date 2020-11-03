@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function(){
             arrayImagenesProductos = document.querySelectorAll(".img-top")
             ventanaModal = document.querySelector("#ventana-modal")
             overlay = document.querySelector("#overlay")
-
+            contenidoModal = document.querySelector(".modal-content")
             overlay.addEventListener("click",()=>{
               toggleFondo()
             })
@@ -30,7 +30,7 @@ function recorrerImagenes() {
                 //Inicia evento para click en imagenes
                 arrayImagenesProductos[i].addEventListener("click", function () {
                   
-                    ventanaModal.innerHTML = " ";
+                    contenidoModal.innerHTML = " ";
 
                     //Busca id del producto
                     id = arrayImagenesProductos[i].parentElement.parentElement.parentElement.attributes[0].value;
@@ -57,14 +57,15 @@ function toggleFondo() {
 function bajarModal() {
   overlay.classList.toggle("fondo-negro")
   ventanaModal.classList.toggle("bajar-modal");
-  ventanaModal.innerHTML = htmlModal()
+  contenidoModal.innerHTML = htmlModal()
+  modalContent = $(".modal-content")//---------------------------
+  btnAgregar = document.querySelectorAll(".btnAgregar") //Instancia Array con todos los botones para DarkMode
 }
 
 //Div del Modal
 function htmlModal() {
     return `
-    <div class="modal-dialog" role="document">
-      <div class="modal-content card-night">
+    
         <div class="modal-header">
           <h5 class="modal-title">${fullProduct.nombre}</h5>
           
@@ -82,13 +83,11 @@ function htmlModal() {
           </div> 
         </div>
         <div class="modal-footer">
-            <button id="comprarBtn" class="btn btnLargo btnAgregar raleway border-night" onclick="agregaralcarrito(${fullProduct.id}) ">
+            <button id="comprarBtn" class="btn btnLargo btnAgregar raleway" onclick="agregaralcarrito(${fullProduct.id}) ">
               Agregar
               <i class="fas fa-shopping-cart"></i>
             </button>
         </div>
-      </div>
-    </div>
   `
 }
 

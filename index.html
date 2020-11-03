@@ -49,7 +49,6 @@
     <link rel="stylesheet" href="CSS/navbar.css">
     <link rel="stylesheet" href="CSS/lista.css">
     <link rel="stylesheet" href="CSS/catalogo.css">
-    <link rel="stylesheet" href="CSS/contacto.css">
     <link rel="stylesheet" href="/CSS/night-mode.css">
 
     <link rel="shortcut icon" type="image/png" href="imgs/guitarra.png">
@@ -63,14 +62,25 @@
     <script src="JS/modal.js"></script>
     <script defer src="JS/selectFiltros.js"></script>
     <script src="JS/ticket.js"></script>
+    <script src="/JS/night-mode.js"></script>
     
 </head>
 
 
-<body class="body-font-night">
+<body id="body">
     
+    <div class="cont-brightmode display-none">
+        <img id="img-luna" class="" src="/icons/moon-80px.png" alt="luna">
+        <img id="img-sol" class="display-none" src="/icons/sol-light-80px.png" alt="sol">
+
+    </div>
+
     <div id="overlay">
-        <div id="ventana-modal" ></div>
+        <div id="ventana-modal" >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content"></div>
+            </div>
+        </div>
     </div>
     
     <!--======================================= SECCION NAV Y HEADER =======================================-->
@@ -111,10 +121,16 @@
                     </a>
                 </li>
                 <li class="fade">
-                    <div id="night-mode">
-                        <div class="formato-icons-menu"><img src="icons/moon-36px.png" alt="moon"></div>
+                    <a href="#seccion-contacto">
+                        <div class="formato-icons-menu"><img src="/icons/icons8-tienda-36.png" alt="tienda"></div>
+                        <span class="ml-3">Tiendas</span>
+                    </a>
+                </li>
+                <li class="fade">
+                    <a id="night-mode">
+                        <div class="formato-icons-menu"><img id="img-nav-mode" src="icons/moon-36px.png" alt="moon"></div>
                         <span class="ml-3">Night Mode</span>
-                    </div>
+                    </a>
                 </li>
                 
             </ul>
@@ -141,6 +157,7 @@
                 <section id="seccionCatalogo" class="pt-5 fondoColor">
 
                     <div>
+                        
                         <span id="tituCat" class="hoobe text-center mb-3 mt-0 ml-0">Catalogo</span>
                     
                         <span id="seccion-search"> 
@@ -257,7 +274,7 @@
                     <div class="row justify-content-center">    
             
                         <!-------------- LISTA ------------>
-                        <div id="contLista" class="col-6 mr-2 border-night">
+                        <div id="contLista" class="col-6 mr-2">
                             <div id="lista" class="pt-3">Lista Productos</div>
             
                             <div id="listaProd" class="ml-0">
@@ -267,7 +284,7 @@
             
                         
                         <!---------------------------- CARRITO --------------------------------->
-                        <div id="contCarrito" class="col-4 ml-3 border-night">
+                        <div id="contCarrito" class="col-4 ml-3">
                             <div id="carrito" class="pt-3">Carrito</div>
             
                             <!-- Contenedor de las 4 fases para realizar una compra -->
@@ -284,7 +301,7 @@
                                     <div id="totalNum" class="heebo">$0</div>
                 
                                     <div class="mt-5">
-                                        <button id="btnComprar" class="btn border-night">Comprar</button>
+                                        <button id="btnComprar" class="btn ">Comprar</button>
                                     </div>
                                     
                                 </div>
@@ -292,11 +309,11 @@
                                 <div id="cont-pago">
                                     <div id="titulo-pago" class="mt-2 raleway">Elija medio de pago</div>
                                     <div class="cont-icons-pago mt-3">
-                                        <span class="marco-icono-carrito p-2 border-night">
+                                        <span class="marco-icono-carrito p-2 ">
                                             <img src="icons/money.png" alt="icon-efect" class="pl-1">
                                             <span class="titulo-pago">Efectivo</span>
                                         </span>
-                                        <span class="marco-icono-carrito ml-5 p-2 border-night">
+                                        <span class="marco-icono-carrito ml-5 p-2 ">
                                             <img src="icons/icons8-paypal-64.png" alt="icon-paypal" class="pl-1">
                                             <span class="titulo-pago">Paypal</span>
                                         </span>
@@ -323,7 +340,7 @@
                                         <input id="des" class="input-pago" type="text" name="pago" placeholder="Descripción Casa (OPCIONAL)">
                                     </span> 
 
-                                    <button id="comprar-btn-final" class="btn btnLargo btnAgregar raleway border-night">
+                                    <button id="comprar-btn-final" class="btn btnLargo btnAgregar raleway">
                                         Comprar
                                         <i class="fas fa-shopping-cart"></i>
                                     </button>
@@ -342,7 +359,7 @@
                                         <ul id="lista-prod-ticket"></ul>
                                         <span id="total-pago-ticket"></span>
                             
-                                        <button id="volver-ticket" class="btn btnLargo btnAgregar raleway border-night">
+                                        <button id="volver-ticket" class="btn btnLargo btnAgregar raleway">
                                             Volver
                                         </button>
                                         
@@ -381,10 +398,10 @@
             </div>
         </div>
         
-        <div id="seccion-contacto" class="col-12 seccion-tiendas-night">
+        <div id="seccion-contacto" class="col-12 pt-4">
             <div class="row">
                 <div class="col-12">
-                    <div class="titulo-tiendas text-center mb-2 seccion-tiendas-night">Algunas de nuestras tiendas...</div>
+                    <div class="titulo-tiendas text-center mb-2 ">Algunas de nuestras tiendas...</div>
                 </div>
                 <div class="col-1"></div>
                 <div class="col-10 pl-5 pr-5">

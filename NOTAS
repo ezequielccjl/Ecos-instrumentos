@@ -2,10 +2,6 @@ TAREAS RESTANTES:
 
 LocalStorage carrito 
 Boton vaciar carrito
---Side menu con total y lista
-Night Mode
---AOS (Animate On Scroll) Library
-Footer (contacto)
 Imagenes
 
 Setear ORIGIN: 
@@ -14,32 +10,3 @@ git remote add origin https://github.com/Fab-2727/PruebaUno
 Push master al repositorio remoto
 git push --set-upstream <REPO-REMOTO> master
 
-
-<button id="boton-cerrar-modal" type="button" onclick="toggleFondo()" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-
-<div class="unLi mb-2">
-  <span class="listaNombre">Producto</span>
-  <span class="listaCant">15</span>
-                                    
-  <span class="botonesMasMenos">
-  <a class="listaBtn listaMas"><i class="fas fa-plus"></i></a>
-  <a class="listaBtn listaMenos"><i class="fas fa-minus"></i></a>
-  </span>
-            </div>
-
-
-<div id="cont-ticket-final">
-                                    <div id="titulo-final-ticket">COMPRA REALIZADA CON EXITO!!</div>
-                                    <div class="flex-column-ticket raleway">
-                                        <span>Nombre: ${ticket.nombre}</span>
-                                        <span>Teléfono: ${ticket.telefono}</span>
-                                        <span>Dirección: ${ticket.direccion}</span>
-                                        <span>Descripción: ${ticket.descripcion}</span>
-                                        <div>Lista:</div>
-                                        <ul id="lista-prod-ticket">
-                                            <li>-${ticket.nombre} x${ticket.cantidad}</li>
-                                        </ul>
-                                    </div>
-                                </div>

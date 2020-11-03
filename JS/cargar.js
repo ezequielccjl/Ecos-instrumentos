@@ -16,7 +16,7 @@ let prodListados = []
 
 window.onload = function (){
 
-    localStorage.clear();
+    //localStorage.clear();
 
     contCatalogo = document.getElementById("contCatalogo")
     contSlider = document.getElementById("content-slider")
@@ -25,12 +25,18 @@ window.onload = function (){
     contLista = document.getElementById("listaProd")
     snipper = document.getElementById("snipper-carga")
     
+    if (listaCarrito.length>=1) {
+        mostrarProdsAgregados()
+        cargarListaCarrito()
+        actualizaLista()
+    }
+
     setTimeout(function (){
         snipper.classList.toggle("display-none")
         contSlider.classList.toggle("display-none")
         cargarCatalogo();
         cargarListaCarrito();
-        
+
     },2000)
     
 }
@@ -48,6 +54,8 @@ function cargarCatalogo(){
                 html = html + htmlCatalogo(prod);
             });
             contSlider.innerHTML = html
+            btnAgregar = $(".btnAgregar") //Instancia Array con todos los botones para DarkMode
+            
         },
         error: function (error) {
             console.log("ERROR")
@@ -61,7 +69,7 @@ function htmlCatalogo(prod){
     return `
     <li id="${prod.id}" class="mr">
         <div class="unProducto">
-            <div class="card text-center sombras cartaAncho card-night">
+            <div class="card text-center sombras cartaAncho ">
                 <img class="card img-top centrar" src="${prod.imagen}" alt="${prod.alt}" width="50%" height="150px">
 
                 <div class="card-body heebo">
@@ -70,7 +78,7 @@ function htmlCatalogo(prod){
                         <span class="font-weight-bold">$${prod.precio}</span>
                     </p>
                     <div class="row m-0 p-0 btnMasMenos mt-2 justify-content-center">
-                        <button id="comprarBtn" class="btn btnLargo btnAgregar raleway border-night" onclick="agregaralcarrito(${prod.id}) ">
+                        <button id="comprarBtn" class="btn btnLargo btnAgregar raleway" onclick="agregaralcarrito(${prod.id}) ">
                             Agregar
                             <i class="fas fa-shopping-cart"></i>
                         </button>
@@ -85,7 +93,7 @@ function htmlCatalogo(prod){
 
 //-------CARGA DE LISTA
 function cargarListaCarrito(){
-    contLista.innerHTML = " ";
+    //contLista.innerHTML = " ";
     let lista = listaProductoCantidad();
     let productoEnLista;
     let html = " "
@@ -101,6 +109,9 @@ function cargarListaCarrito(){
 
             })
         });
+        
+        card = document.querySelectorAll(".sombras") //lista
+        
     }, 800)
 
     
@@ -125,6 +136,7 @@ function htmlLista(){
             let nombre = element.producto.nombre;
             let cantidad = element.cantidad;
             html = html + htmlListaUnidad(nombre, cantidad);
+            listaBtn = document.querySelectorAll(".listaBtn")
         }
     });
 
@@ -138,8 +150,8 @@ function htmlListaUnidad(nombre, cantidad){
             <span class="listaCant">${cantidad}</span>
                         
             <span class="botonesMasMenos">
-            <a class="listaBtn listaMas btn-lista-night"><i class="fas fa-plus"></i></a>
-            <a class="listaBtn listaMenos btn-lista-night"><i class="fas fa-minus"></i></a>
+            <a class="listaBtn listaMas"><i class="fas fa-plus"></i></a>
+            <a class="listaBtn listaMenos"><i class="fas fa-minus"></i></a>
             </span>
 
         </div>
@@ -212,6 +224,8 @@ function restarUnProducto(){
     
                 mostrarProdsAgregados();
                 actualizaLista()
+                localStorage.listaCarrito = JSON.stringify(listaCarrito);
+
             }else{
                 alertCustom("No se pueden restar productos mientras realiza una compra")
             }

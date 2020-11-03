@@ -50,8 +50,13 @@
 
 .listaBtn a .fa
 {
+  
 	font-size: 1.5em;
 	vertical-align: middle;
+}
+
+.listaBtn i{
+  margin-top: 3px !important;
 }
 
 .botonesMasMenos{
@@ -70,11 +75,11 @@
   
   content: "";
   position: absolute !important;
-  top: 0px;
-  right: 0px;
+  top: -1px;
+  right: -1px;
   
   display: block;
-  width: 27px;
+  width: 28px;
   height: 28px;
   
   background-color: #ff4640;  
@@ -92,11 +97,11 @@
   
   content: "";
   position: absolute !important;
-  top: 0px;
-  right: 0px;
+  top: -1px;
+  right: -1px;
   
   display: block;
-  width: 27px;
+  width: 28px;
   height: 28px;
   
   background-color: #00ab17;  
