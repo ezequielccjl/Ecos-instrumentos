@@ -7,65 +7,58 @@ let btnCerrarModal;
 
 document.addEventListener("DOMContentLoaded", function(){
 
-  setTimeout(function () {
-            
-            arrayImagenesProductos = document.querySelectorAll(".img-top")
-            ventanaModal = document.querySelector("#ventana-modal")
-            overlay = document.querySelector("#overlay")
-            contenidoModal = document.querySelector(".modal-content")
-            overlay.addEventListener("click",()=>{
-              toggleFondo()
-            })
-        
-            recorrerImagenes();
+    setTimeout(()=>{
+        arrayImagenesProductos = document.querySelectorAll(".img-top")
+        ventanaModal = document.querySelector("#ventana-modal")
+        overlay = document.querySelector("#overlay")
+        contenidoModal = document.querySelector(".modal-content")
+        overlay.addEventListener("click",()=>{
+            toggleFondo();
+        });
 
-    }, 3000)
-})
+        recorrerImagenes();
+    }, 3000);
+});
 
 //Recorre todo el array de imagenes del catalogo
 function recorrerImagenes() {
-  
-            for (let i = 0; i < arrayImagenesProductos.length; i++) {
 
-                //Inicia evento para click en imagenes
-                arrayImagenesProductos[i].addEventListener("click", function () {
-                  
-                    contenidoModal.innerHTML = " ";
+    for (let i = 0; i < arrayImagenesProductos.length; i++) {
+        //Inicia evento para click en imagenes
+        arrayImagenesProductos[i].addEventListener("click", function () {
+            contenidoModal.innerHTML = " ";
+            //Busca id del producto
+            id = arrayImagenesProductos[i].parentElement.parentElement.parentElement.attributes[0].value;
 
-                    //Busca id del producto
-                    id = arrayImagenesProductos[i].parentElement.parentElement.parentElement.attributes[0].value;
-                    
-                    listaCatalogo.forEach(prod =>{
-                        if (prod.id == id) {
-                            fullProduct = prod;
-                            bajarModal()
-                        }
-                    })
-
-                })
-
-            }
+            listaCatalogo.forEach(prod =>{
+              if (prod.id == id) {
+                  fullProduct = prod;
+                  bajarModal();
+              }  
+            })
+        });
+        
+    }
 }
 
 //Clases para que el usario toque overlay y salga del modal
 function toggleFondo() {
-  overlay.classList.toggle("fondo-negro")
-  ventanaModal.classList.toggle("bajar-modal");
+    overlay.classList.toggle("fondo-negro")
+    ventanaModal.classList.toggle("bajar-modal");
 }
 
 //Toggle clases para ubicar modal en su posicion
 function bajarModal() {
-  overlay.classList.toggle("fondo-negro")
-  ventanaModal.classList.toggle("bajar-modal");
-  contenidoModal.innerHTML = htmlModal()
-  modalContent = $(".modal-content")//---------------------------
-  btnAgregar = document.querySelectorAll(".btnAgregar") //Instancia Array con todos los botones para DarkMode
+    overlay.classList.toggle("fondo-negro")
+    ventanaModal.classList.toggle("bajar-modal");
+    contenidoModal.innerHTML = htmlModal()
+    modalContent = $(".modal-content")//---------------------------
+    btnAgregar = document.querySelectorAll(".btnAgregar") //Instancia Array con todos los botones para DarkMode
 }
 
 //Div del Modal
 function htmlModal() {
     return `
-    
         <div class="modal-header">
           <h5 class="modal-title">${fullProduct.nombre}</h5>
           
@@ -88,6 +81,5 @@ function htmlModal() {
               <i class="fas fa-shopping-cart"></i>
             </button>
         </div>
-  `
+    `  
 }
-
