@@ -1,3 +1,4 @@
+/*Contenedor principal para transición de modo*/
 .cont-brightmode{
     display: none;
     position: absolute;
@@ -9,6 +10,11 @@
     transition: .5s;
 }
 
+.opacityUno{
+    opacity: 1 !important;
+}
+
+/*Colores para el contenedor principal*/
 .luna{
     opacity: 0;
     background-color: #151515;
@@ -22,14 +28,13 @@
 
 }
 
-.opacityUno{
-    opacity: 1;
-}
-
+/*Clase mayor en la piramide de dependencia*/
+/*Debido a que es asignada al body, todo lo que se encuentre dentro de él pasará a Night-Mode*/
 .body-night{
     color: white;
 }
 
+/*Clases para elementos dentro del body*/
 .body-night .catalogo-carrito{
     background-color: #151515;
 

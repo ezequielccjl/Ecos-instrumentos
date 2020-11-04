@@ -1,4 +1,4 @@
-//var listaCarrito = [];
+let listaCarrito = localStorage.listaCarrito ? JSON.parse(localStorage.listaCarrito) : [];
 let listaCatalogo = [];
 
 let parrafo;
@@ -6,8 +6,8 @@ let totalPagar;
 let prodAgregados;
 let contProd;
 
+//Proceso de Pago se utiliza para restricciones de agregar/restar al carrito mientras se Realiza compra
 sessionStorage.setItem('ProcesoDePago', 'false');
-let listaCarrito = localStorage.listaCarrito ? JSON.parse(localStorage.listaCarrito) : [];
 
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 /*==============================================================================================*/
 
+//Se ejecuta con onclick() en los botones de las cards
 function agregaralcarrito(idProd){
     if (sessionStorage.ProcesoDePago == "false") {
         mostrarNotif();
@@ -33,10 +34,7 @@ function agregaralcarrito(idProd){
         mostrarProdsAgregados();
 
         actualizaLista()
-        //==================== STORAGE
-        let cantidad = cantEnCarrito(idProd)
 
-        //localStorage.setItem(idProd, cantidad);  
         localStorage.listaCarrito = JSON.stringify(listaCarrito);
 
     }else{
@@ -52,11 +50,7 @@ function calcularTotal(){
     return total;
 }
 
-function modificarTotal(){
-    totalPagar.textContent = " ";
-    totalPagar.textContent = "$"+calcularTotal()
-}
-
+//Se utiliza para modificar el DOM del Carrito y mostrar los productos agregados en el Navbar
 function mostrarProdsAgregados(){
     prodAgregados.innerHTML = " ";
     document.querySelector(".dot").innerHTML = " ";
@@ -76,18 +70,10 @@ function mostrarProdsAgregados(){
 
     }
 
-    modificarTotal();
+    totalPagar.textContent = " ";
+    totalPagar.textContent = "$"+calcularTotal()
 }
 
-function cantEnCarrito(id){
-    let contador = 0;
-    listaCarrito.forEach(prod => {
-        if (prod.id == id) {
-            contador = contador +1;
-        }
-    });
-    return contador;
-}
 
 function cargarListaCatalogo(){
     $.ajax({
@@ -103,6 +89,7 @@ function cargarListaCatalogo(){
     });
 }
 
+//Toast de producto Agregado
 function mostrarNotif() {
     Swal.fire({
         title: 'Producto agregado!',

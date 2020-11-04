@@ -1,22 +1,34 @@
+//El funcionamiento del nightmode consta de una dependencia de clases CSS con respecto a una que le asigno al body
+//Acá me encargo de hacer la animación y togglear las clases segun el localStorage y el usuario lo indiquen
+
 let btnNightMode;
 let contBrightmode;
 let imgLuna;
 let imgSol;
 
-//Mantiene el light-night mode / 0=Light- to noche / 1=Night to dia
+//MODO:
+//0=Light- to Night / 1=Night to Light
+
+//Según el localStorage asigno a "modo" el último modo
 let modo;
 modo = localStorage.modo ? modo = localStorage.modo : localStorage.setItem('modo', '0');
-console.log(modo)
 
 document.addEventListener("DOMContentLoaded", ()=>{
 
     btnNightMode = document.querySelector("#night-mode")
     contBrightmode = document.querySelector(".cont-brightmode")
 
+    //Imagenes Moon-Sun dentro del HTML
     imgSol = document.querySelector("#img-sol")
     imgLuna = document.querySelector("#img-luna")
 
-    //SETEA OPCION DEL SIDE MENU SEGUN EL MODO EN EL QUE EL LOCAL STORAGE SE ENCUENTRE
+    setearSegunLocalStorage();
+    eventoClickMenu();
+    
+})
+
+function setearSegunLocalStorage() {
+    //Setea Imagen y Nombre de la opción en el Menu
     if ((localStorage.modo == '0')) {
         $("#night-mode")[0].children[1].textContent = "Night Mode"
         $("#img-nav-mode")[0].attributes[1].value = "icons/moon-36px.png"
@@ -25,7 +37,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         $("#img-nav-mode")[0].attributes[1].value = "icons/sol-light-36px.png"
     }
 
-    //SETEA TODO SEGUN EL MODO EN EL QUE EL LOCAL STORAGE SE ENCUENTRE
+    //Setea clases del DOM
     if (localStorage.modo=='1') {
         $("#body").addClass("body-night")
         contBrightmode.classList.remove("luna")
@@ -39,19 +51,22 @@ document.addEventListener("DOMContentLoaded", ()=>{
         imgSol.classList.add("display-none")
         imgLuna.classList.remove("display-none")
     }
+}
 
+function eventoClickMenu(){
     btnNightMode.addEventListener("click", function () {
         
-
         contBrightmode.classList.toggle("display-none")
+
         setTimeout(()=>{
             window.scrollTo(0, 0)
             contBrightmode.classList.toggle("opacityUno")
 
+            //Se modifica el localStorage.modo
             if (localStorage.modo == '1' ) {localStorage.modo = '0'} else {localStorage.modo = '1'}
 
             setTimeout(()=>{
-                //ACA SE HACE TOGGLE DE CLASES PARA MODO OSCURO -------------------
+                //Toggle de la clase body-night
                 if (localStorage.modo=='1') {
                     $("#body").addClass("body-night")
                 }else{
@@ -71,7 +86,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 setTimeout(()=>{
                 contBrightmode.classList.toggle("display-none")
                 
-                //TOGGLE DE CLASES
+                //Toggle de clases para el Contenedor ventana 100%
                 if (localStorage.modo == '0') {
                     contBrightmode.classList.toggle("luna")
                     contBrightmode.classList.toggle("sol")
@@ -90,4 +105,4 @@ document.addEventListener("DOMContentLoaded", ()=>{
         },500)
         
     })
-})
+}

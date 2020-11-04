@@ -1,4 +1,4 @@
-//CLASE ACTIVO: ANIMACION X
+//Animación SideMenu
 
 let hamburguer;
 let navLinks;
@@ -11,8 +11,7 @@ document.addEventListener("DOMContentLoaded", function(){
     links = document.querySelectorAll(".nav-links li");
     sidebar = $(".sidebar")
 
-    fadeOpsMenu();
-
+    //Se muestra el menú completo
     hamburguer.click(function(){
 
         sidebar.toggleClass("active-side-menu")
@@ -20,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     });
 
+    //Se asoma el menú
     hamburguer.hover(
         function() {
             sidebar.toggleClass("hover-hamburguesa")
@@ -31,12 +31,11 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     )
 
-    
-
     escuchaLinks(links)
     
 });
 
+//Cada vez que se clickee una opción => El menú debe cerrarse
 function escuchaLinks(opLinks) {
     opLinks.forEach(unaOp => {
         unaOp.addEventListener("click", function() {
@@ -46,13 +45,4 @@ function escuchaLinks(opLinks) {
         
     });
 }
-
-function fadeOpsMenu() {
-    links.forEach(link => {
-        link.classList.toggle("fade")
-    });
-}
-
-
-
  

@@ -1,12 +1,18 @@
-TAREAS RESTANTES: 
+ECOS MUSIC - Ezequiel Cordova Cruz - Camada 8695
 
-LocalStorage carrito 
-Boton vaciar carrito
-Imagenes
+Acá voy a explicar la funcionalidad de cada uno de los archivos JS y el orden que recomiendo para revisar 😊
 
-Setear ORIGIN: 
-git remote add origin https://github.com/Fab-2727/PruebaUno
+1. script.js: Es el principal de todos los .js, acá me encargo de trabajar con el carrito e ir actualizando el DOM.
+2. cargar.js: Acá se cargan en el DOM todas las cards del catálogo con AJAX/JSON y tambien se cargan los productos en la lista.
+3. modal.js: Como lo indica el nombre, trabajo con un modal para que muestre la descripción de producto cada vez que se toque la imagen en el catálogo.
+4. ticket.js: En ticket.js lo que hago es poner en escucha diferentes eventos para ir soltando transiciones y asi validar los diferentes procesos para el pago y compra final.
+5. buscador.js: Se centra en el evento keydown para actulizar el catálogo según lo que el usuario quiera buscar.
+6. night-mode.js: Quizas sea el archivo más desordenado pero básicamente es un toggle masivo de clases para el night-mode.
+7. animMenu.js: Son todas las animaciones realicionadas al SideMenu.
+8. animNavbar.js: Animación del titúlo ECOS MUSIC en navbar.
+9. selectFiltros.js: Acá se tratan las animaciones de los filtros que se encuentran a la derecha del catálogo. Estos NO SON FUNCIONALES. Si bien tenía pensado hacerlos funcionales trabajando con arrays y demas, no lo hice porque me atrasé con el tiempo 😞.
 
-Push master al repositorio remoto
-git push --set-upstream <REPO-REMOTO> master
+
+
+NOTA: Durante el proceso del proyecto tuve un inconveniente con el LightSlider, apenas abra la página se va a notar. No supe como arreglarlo pero no interviene con la funcionalidad de la página, es puramente estetico. Este "bug" se arregla cada vez que la ventana tiene algun cambio de tamaño ya sea cuando se abra la consola, pongas en pantalla completa o se minimice.
 

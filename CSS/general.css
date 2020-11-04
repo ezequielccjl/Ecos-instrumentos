@@ -40,8 +40,6 @@
     font-family: "Heebo";
 }
 
-
-
 #carrito{
     font-family: Merriweather Sans;
     font-size: 45px;
@@ -76,7 +74,6 @@
 
 #titulo{
     font-family: "Staatliches";
-    /*font-family: "Merriweather Sans";*/
     font-size: 4.5rem;
     text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.7);
 }
@@ -105,7 +102,6 @@
 }
 
 /*Seccion About*/
-
 #titulo-paratexto{
     font-family: "Merriweather Sans";
     font-size: 40px;

@@ -199,20 +199,7 @@ body.swal2-toast-shown .swal2-container.swal2-top-end, body.swal2-toast-shown .s
     margin-top: 1.2rem;
 }
 
-.dot {
-    height: 23px;
-    width: 24px;
-    background-color:#200000a2;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 13px;
-    color: white;
-    margin-top: 1rem;
-    margin-left: -1.2rem;
-    z-index: 26;
-}
+
 
 
 

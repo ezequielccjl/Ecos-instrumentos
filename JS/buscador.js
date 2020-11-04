@@ -43,6 +43,8 @@ function buscarProd(){
     return productosFiltrados;
 }
 
+//Vacia todo lo que esté en el slider y lo llena con la busqueda del usuario
+//Tira error en consola pero funciona
 function cargarBusqueda(arrayBusqueda){
     contenedorSlider.innerHTML = " ";
     let html = " ";
@@ -54,6 +56,7 @@ function cargarBusqueda(arrayBusqueda){
     
 }
 
+//Se utiliza para mantener estatica la barra del buscador cuando se encuentre llena
 function verificarInput(){
 
     if (prodBusqueda.length >= 1) {

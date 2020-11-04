@@ -12,13 +12,18 @@ document.addEventListener("DOMContentLoaded", function(){
         ventanaModal = document.querySelector("#ventana-modal")
         overlay = document.querySelector("#overlay")
         contenidoModal = document.querySelector(".modal-content")
+        
+        recorrerImagenes();
+
         overlay.addEventListener("click",()=>{
             toggleFondo();
         });
 
-        recorrerImagenes();
-    }, 3000);
+    }, 3000); //Hay que esperar 3 segundos debido al snipper, de lo contrario no llegaria a cargar las cards
+              //y asi la variable "arrayImagenesProductos" quedaria vacía
 });
+
+/*==============================================================================================*/
 
 //Recorre todo el array de imagenes del catalogo
 function recorrerImagenes() {
@@ -52,8 +57,6 @@ function bajarModal() {
     overlay.classList.toggle("fondo-negro")
     ventanaModal.classList.toggle("bajar-modal");
     contenidoModal.innerHTML = htmlModal()
-    modalContent = $(".modal-content")//---------------------------
-    btnAgregar = document.querySelectorAll(".btnAgregar") //Instancia Array con todos los botones para DarkMode
 }
 
 //Div del Modal

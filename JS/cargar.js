@@ -2,21 +2,15 @@ let contCatalogo;
 let contSlider;
 let contLista;
 let snipper;
-let htmlCollectionBotones = [];
+let htmlCollectionBotones = []; //Lista de botones "Agregar al carrito"
 let botones = [];
-
-//listaDivsAgregados[0].children[2].children[0]
 
 let cantidadEnLista = 0;
 let listaDivsAgregados = [];
 let listaBotonesMas = [];
 let listaBotonesMenos = [];
 
-let prodListados = []
-
 window.onload = function (){
-
-    //localStorage.clear();
 
     contCatalogo = document.getElementById("contCatalogo")
     contSlider = document.getElementById("content-slider")
@@ -25,24 +19,25 @@ window.onload = function (){
     contLista = document.getElementById("listaProd")
     snipper = document.getElementById("snipper-carga")
     
+    //Verificación para mostrar productos en carrito según LocalStorage
     if (listaCarrito.length>=1) {
         mostrarProdsAgregados()
         cargarListaCarrito()
         actualizaLista()
     }
 
+    //Desactiva snipper y muestra catalogo
     setTimeout(function (){
         snipper.classList.toggle("display-none")
         contSlider.classList.toggle("display-none")
         cargarCatalogo();
         cargarListaCarrito();
-
     },2000)
     
 }
 
+/*==============================================================================================*/
 
-//--------CARGA DE CATALOGO
 function cargarCatalogo(){
     contSlider.innerHTML = " ";
     let html = " ";
@@ -53,8 +48,7 @@ function cargarCatalogo(){
             data.forEach(prod => {
                 html = html + htmlCatalogo(prod);
             });
-            contSlider.innerHTML = html
-            btnAgregar = $(".btnAgregar") //Instancia Array con todos los botones para DarkMode
+            contSlider.innerHTML = html;
             
         },
         error: function (error) {
@@ -91,13 +85,8 @@ function htmlCatalogo(prod){
 }
 
 
-//-------CARGA DE LISTA
+//Evento click en botones "Agregar al carrito" => Actualiza la lista de productos
 function cargarListaCarrito(){
-    //contLista.innerHTML = " ";
-    let lista = listaProductoCantidad();
-    let productoEnLista;
-    let html = " "
-    let prodCantFINAL;
 
     setTimeout(function(){
         botones = Array.prototype.slice.call(htmlCollectionBotones)
@@ -110,18 +99,14 @@ function cargarListaCarrito(){
             })
         });
         
-        card = document.querySelectorAll(".sombras") //lista
-        
-    }, 800)
-
-    
+    }, 800)//Tiempo para que carguen todas las cards y sus botones
 
 }
 
 function actualizaLista() {
-    //ACTUALIZA LISTA
     contLista.innerHTML = htmlLista()
 
+    //Actualiza array de li's en ListaProductos
     listaDivsAgregados = $(".unLi");
     cantidadEnLista = listaDivsAgregados.length;
     sumaRestaEventos();
@@ -158,9 +143,10 @@ function htmlListaUnidad(nombre, cantidad){
     `
 }
 
+//Devuelve objetos de los productos en carrito y su respectiva cantidad
 function listaProductoCantidad(){
-    
     let productosYCantidad = [];
+
     listaCatalogo.forEach(prodCatalogo => {
         let cont = 0;
         let prodActual = prodCatalogo;
@@ -171,7 +157,7 @@ function listaProductoCantidad(){
             }
         });
 
-        //Crea objeto para nueva lista
+        //Crea objeto para lista
         let prodCant = {producto : prodActual, cantidad : cont};
 
         productosYCantidad.push(prodCant);
@@ -181,15 +167,20 @@ function listaProductoCantidad(){
 }
 
 
-//=====================================
+//================= Eventos para funciones +/- en Lista ====================
+
 
 function sumaRestaEventos(){
+    //Cada vez que se modifica la ListaProductos hay que setear nuevos arrays con los respectivos botones +/-
+    //y poner en escucha sus eventos
     listaBotonesMas = []
     listaBotonesMenos = []
     
+    //Se llenas arrays con los botones
     llenarBtnMas();
     llenarBtnMenos();
 
+    //Eventos click para cada elemento de los arrays
     sumarUnProducto();
     restarUnProducto();
 }
@@ -211,17 +202,18 @@ function restarUnProducto(){
         boton.addEventListener("click", function(){
             if (sessionStorage.ProcesoDePago == "false") {
                 let prodParaRestar;
-                nombreProd = boton.offsetParent.parentElement.children[0].textContent;
-    
+                let nombreProd = boton.offsetParent.parentElement.children[0].textContent;
                 listaCatalogo.forEach(prod => {
                     if (prod.nombre == nombreProd) {
                         prodParaRestar = prod;
                     }
                 });
     
+                //Borra UN producto de la lista carrito
                 let indiceProdBorrar = listaCarrito.indexOf(prodParaRestar)
                 listaCarrito.splice(indiceProdBorrar,1)
     
+                //Actualiza el DOM y el localStorage
                 mostrarProdsAgregados();
                 actualizaLista()
                 localStorage.listaCarrito = JSON.stringify(listaCarrito);
@@ -238,21 +230,24 @@ function sumarUnProducto(){
         boton.addEventListener("click", function(){
             if (sessionStorage.ProcesoDePago == "false") {
                 let prodParaAgregar;
-                nombreProd = boton.parentNode.parentElement.children[0].textContent;
+                let nombreProd = boton.parentNode.parentElement.children[0].textContent;
                 
-    
                 listaCatalogo.forEach(prod => {
                     if (prod.nombre == nombreProd) {
                         prodParaAgregar = prod;
                         return;
                     }
                 });
+
+                //Agrega prod a lista
                 listaCarrito.push(prodParaAgregar);
+
+                //Actualiza el DOM y el localStorage
                 mostrarProdsAgregados();
-                mostrarNotif();
-                prodListados = document.querySelectorAll(".unLi")
-                
                 actualizaLista()
+                mostrarNotif();
+                localStorage.listaCarrito = JSON.stringify(listaCarrito);
+
             }else{
                 alertCustom("No se pueden agregar productos mientras realiza una compra")
             }

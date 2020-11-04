@@ -68,12 +68,14 @@
 
 <body id="body">
     
+    <!-- Contenedor ventana 100% para traspaso de modo (Light/Night) -->
+    <!-- Ligado con archivo night-mode.js -->
     <div class="cont-brightmode display-none">
         <img id="img-luna" class="" src="/icons/moon-80px.png" alt="luna">
         <img id="img-sol" class="display-none" src="/icons/sol-light-80px.png" alt="sol">
-
     </div>
 
+    <!-- Contenedor ventana 100% para modal -->
     <div id="overlay">
         <div id="ventana-modal" >
             <div class="modal-dialog" role="document">
@@ -82,50 +84,53 @@
         </div>
     </div>
     
-    <!--======================================= SECCION NAV Y HEADER =======================================-->
+    <!-- SECCION Navbar/Header -->
 
     <nav class="fixed">
         <a href="#seccion-lista-carrito" id="carrito-nav">
             <img src="icons/cart-36px.png" alt="cart">
             <div class="dot display-none"></div>
         </a>
+
+        <!--Animación con JQuery mostrada en scroll event-->
         <div class="disparador">Ecos Music</div>
         
         <div class="hamburguer">
             <div class="icon"></div>
         </div>
 
+        <!--Sidemenu-->
         <div class="sidebar">
             <div id="separador-links">
                 <span>Menú</span>
             </div>
             <ul class="nav-links">
                 
-                <li class="fade">
-                    <a href="#seccion-lista-carrito">
-                        <div class="formato-icons-menu"><img src="icons/cart-39px.png" alt="cart"></div>
-                        <span class="ml-3">Carrito</span>
-                    </a>
-                </li>
-                <li class="fade">
+                <li>
                     <a href="#seccionCatalogo">
                         <div class="formato-icons-menu"><img src="icons/list-35px.png" alt="list"></div>
                         <span class="ml-3">Catalogo</span>
                     </a>
                 </li>
-                <li class="fade">
+                <li>
+                    <a href="#seccion-lista-carrito">
+                        <div class="formato-icons-menu"><img src="icons/cart-39px.png" alt="cart"></div>
+                        <span class="ml-3">Carrito</span>
+                    </a>
+                </li>
+                <li>
                     <a href="#seccion-about">
                         <div class="formato-icons-menu"><img src="icons/info-35px.png" alt="info"></div>
                         <span class="ml-3">About</span>
                     </a>
                 </li>
-                <li class="fade">
+                <li>
                     <a href="#seccion-contacto">
                         <div class="formato-icons-menu"><img src="/icons/icons8-tienda-36.png" alt="tienda"></div>
                         <span class="ml-3">Tiendas</span>
                     </a>
                 </li>
-                <li class="fade">
+                <li>
                     <a id="night-mode">
                         <div class="formato-icons-menu"><img id="img-nav-mode" src="icons/moon-36px.png" alt="moon"></div>
                         <span class="ml-3">Night Mode</span>
@@ -138,25 +143,28 @@
     </nav>
         
 
-    <!--======================== CONTAINERS ================================-->
+    <!--Container PRINCIPAL.-->
     
     <div class="d-flex justify-content-center" id="main-container">
 
+    <!--Imagen y titulo presentación-->
     <div class="fondo">
         <h1 id="titulo" class="text-center text-white">ECOS <span class="weight-normal">Music</span></h1>
     </div>
     
+    <!--ROW con todas las secciones-->
     <div id="row-container" class="row">
+        
+        <!--SECCION Catalogo/Lista/Carrito (col-1 SOLO para hacer margen)-->
         <div class="col-1 catalogo-carrito"></div>
         <div class="col-10 catalogo-carrito">
             <div id="container">
 
-                <!--================= SECCION CATALOGO ======================-->
-            
+                <!--SECCION Catalogo/Filtros-->
                 <section id="seccionCatalogo" class="pt-5 fondoColor">
 
+                    <!--Titulo y Buscador-->
                     <div>
-                        
                         <span id="tituCat" class="hoobe text-center mb-3 mt-0 ml-0">Catalogo</span>
                     
                         <span id="seccion-search"> 
@@ -165,15 +173,15 @@
                                 <i class="fas fa-search"></i>
                             </a>
                         </span>
-            
                     </div>
                     
-             
+                    <!--ROW con SliderCatalogo y Filtros-->
                     <div class="row">
                         
+                        <!--Catalogo-->
                         <div class="col-9">
                             
-                            <!--SNIPPER-->
+                            <!--Snipper-->
                             <div id="snipper-carga" class="row">
                                 <div class="col-12">
                                     <div class="sk-folding-cube">
@@ -185,6 +193,7 @@
                                 </div>
                             </div>
 
+                            <!--Contenedor del catalogo donde se cargan los productos con AJAX-->
                             <div id="contCatalogo">
                                 <!------------ PRODUCTO DE GUIA (NO SE MUESTRA EN EL HTML) ------------>
                                 <div class="item pt-2">
@@ -214,6 +223,8 @@
                                 
                             </div>
                         </div>
+
+                        <!--Filtros-->
                         <div class="col-3">
                             <div class="ml-3 mt-3">
                                 <div class="filtros-titulo">Filtros:</div>
@@ -248,18 +259,16 @@
                                         </div>
 
                                     </div>
-                                    
-
                                 
                                 </div>
 
                                 <div class="ml-3 mt-4">
-                                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                    <label for="vehicle1"> $0 - $10.000</label><br>
-                                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                                    <label for="vehicle2"> $10.000 - $25.000</label><br>
-                                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                                    <label for="vehicle3"> $25.000 - $70.000</label><br>
+                                    <input type="checkbox" id="precio1" name="precio1" value="10000">
+                                    <label for="precio1"> $0 - $10.000</label><br>
+                                    <input type="checkbox" id="precio2" name="precio2" value="25000">
+                                    <label for="precio2"> $10.000 - $25.000</label><br>
+                                    <input type="checkbox" id="precio3" name="precio3" value="70000">
+                                    <label for="precio3"> $25.000 - $70.000</label><br>
                                 </div>
 
                             </div>
@@ -267,12 +276,12 @@
                     
                 </section>
             
-                <!--==================== SECCION LISTA/CARRITO =======================-->
+                <!--SECCION Lista/Carrito-->
                 <section id="seccion-lista-carrito" class="text-center pt-5">
 
                     <div class="row justify-content-center">    
             
-                        <!-------------- LISTA ------------>
+                        <!--Lista y Contenedor a llenar-->
                         <div id="contLista" class="col-6 mr-2">
                             <div id="lista" class="pt-3">Lista Productos</div>
             
@@ -280,19 +289,18 @@
 
                             </div>
                         </div>
-            
                         
-                        <!---------------------------- CARRITO --------------------------------->
+                        <!--Ventana de Carrito con Stages para Proceso de Pago-->
                         <div id="contCarrito" class="col-4 ml-3">
                             <div id="carrito" class="pt-3">Carrito</div>
             
                             <!-- Contenedor de las 4 fases para realizar una compra -->
                             <div id="cont-ticket">
+
                                 <!-- Contenedor inicial con Total a pagar y productos listados -->
                                 <div id="cont-total" class="raleway">
                                     <div id="cont-prod" class="display-none">Productos: 
-                                        <span class="ml-2" id="prodAgregados">
-                                        </span>
+                                        <span class="ml-2" id="prodAgregados"></span>
                                     </div>
                 
                                     <div id="total" class="mt-3">Total</div>
@@ -324,19 +332,19 @@
                                 <div id="cont-datos" class="mt-1">
                                     <div class="mb-2 raleway">Ingrese sus datos:</div>
                                     <span class="span-input-pago ">
-                                        <input id="nom" class="input-pago" type="text" placeholder="Nombre/Apellido*" name="nombre" required>
+                                        <input id="nom" class="input-pago" type="text" placeholder="Nombre/Apellido*" name="nombre" required autocomplete="off">
                                     </span>
                                        
                                     <span class="span-input-pago mt-2">
-                                        <input id="tel" class="input-pago" type="text" placeholder="Teléfono*" name="telefono" required>
+                                        <input id="tel" class="input-pago" type="text" placeholder="Teléfono*" name="telefono" required autocomplete="off">
                                     </span> 
                     
                                     <span class="span-input-pago mt-2">
-                                        <input id="dir" class="input-pago" type="text" placeholder="Dirección*" name="direccion" required>
+                                        <input id="dir" class="input-pago" type="text" placeholder="Dirección*" name="direccion" required autocomplete="off">
                                     </span>  
                     
                                     <span class="span-input-pago mt-2">
-                                        <input id="des" class="input-pago" type="text" name="pago" placeholder="Descripción Casa (OPCIONAL)">
+                                        <input id="des" class="input-pago" type="text" name="pago" placeholder="Descripción Casa (OPCIONAL)" autocomplete="off">
                                     </span> 
 
                                     <button id="comprar-btn-final" class="btn btnLargo btnAgregar raleway">
@@ -364,24 +372,22 @@
                                         
                                     </div>
                                 </div>
-                                
-                                
-                                
-                                
+                                 
                             </div>
             
-                            
                         </div>
-            
                         
                     </div>
+            
                 </section>
-                </div>
+            
+            </div><!--Finaliza Container de Catalogo/Lista/Carrito-->
+        
         </div>
         <div class="col-1 catalogo-carrito"></div>
-
-
-        <div id="seccion-about" class="col-12">
+ 
+        <!--SECCION About-->
+        <seccion id="seccion-about" class="col-12">
             <div class="text-center text-white">  
                 <div id="titulo-paratexto">Sobre Nosotros</div>
                 <div id="paratexto" class="row mt-4 mb-5">
@@ -395,13 +401,17 @@
                 </div>
         
             </div>
-        </div>
+        </seccion>
         
-        <div id="seccion-contacto" class="col-12 pt-4">
+        <!--SECCION Tiendas (Ex sección contacto 😅-->
+        <seccion id="seccion-contacto" class="col-12 pt-4">
             <div class="row">
+                <!--Titulo Tiendas-->
                 <div class="col-12">
                     <div class="titulo-tiendas text-center mb-2 ">Algunas de nuestras tiendas...</div>
                 </div>
+
+                <!--Carousel con Fotos/Descripcion de Tiendas-->
                 <div class="col-1"></div>
                 <div class="col-10 pl-5 pr-5">
                     
@@ -446,9 +456,10 @@
                 </div>
                 <div class="col-1"></div>
             </div>
-        </div>
+        </seccion>
 
-        <div id="seccion-footer" class="col-12">
+        <!--SECCION Footer-->
+        <seccion id="seccion-footer" class="col-12">
             <div class="row">
                 <div class="col-4 cont-logo-footer">
                     <img id="img-footer" src="/imgs/guitarra.png" alt="logo">
@@ -478,19 +489,11 @@
                 </div>
                 
             </div>
-        </div>
-
-        
-
+        </seccion>
     
-    </div>
-
-    <!--========================================= SECCION FOOTER ======================================-->
+    </div><!--Termina ROW con TODAS las Secciones-->
     
-    
-    
-    
-    </div>
+    </div><!--Termina Main Container-->
 
 </body>
 </html>

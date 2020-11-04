@@ -1,44 +1,40 @@
-let btnComprar;
-let contTotal;
-let contPago;
-let contFinal
 let contTicket;
-let contTicketFinal;
+let contTotal, contPago, contDatos, contTicketFinal;//4 Stages
 let contCarrito;
 
-let contDatos;
-let btnEfectivo;
-
+let btnComprar;
+let btnEfectivoPaypal;
 let comprarBtnFinal;
-let ticket;
-let ulListaProds;
-
 let btnVolverTicket;
+let ticket;//Objeto ticket
+let ulListaProds;//Lista de productos para el ticket
 
 document.addEventListener("DOMContentLoaded", function(){
     
+    btnEfectivoPaypal = document.querySelectorAll(".marco-icono-carrito")
     btnComprar = document.querySelector("#btnComprar")
-    btnEfectivo = document.querySelectorAll(".marco-icono-carrito")
+    contCarrito = document.querySelector("#contCarrito")
+    contTicket = document.querySelector("#cont-ticket")
     contTotal = $("#cont-total")
     contPago = $("#cont-pago")
-    contTicket = document.querySelector("#cont-ticket")
-    contTicketFinal = $("#cont-ticket-final")
-    contCarrito = document.querySelector("#contCarrito")
     contDatos = $("#cont-datos")
+    contTicketFinal = $("#cont-ticket-final")
 
-    //
+    //En el HTML yo cargué los 4 pasos para el Proceso de pago dentro de un "cont-ticket" para poder tratar con ellos mediante javascript
+    //Lo que hago acá es desaparecer todos menos el actual (El que muestra el total y los productos agregados)
     contPago.fadeOut()
     contDatos.fadeOut()
     contTicketFinal.fadeOut()
 
     btnComprar.addEventListener("click", ()=>{
+        //Verifica si hay productos agregados para hacer transición al siguiente stage
         if (listaCarrito.length>=1) {
             sessionStorage.ProcesoDePago = "true";
             contTotal.fadeOut()
             setTimeout(function () {
                 contPago.fadeIn()
 
-                pasarDatosParaPago()
+                pasar_a_pago()
                 
             },500)
         }else{
@@ -48,11 +44,10 @@ document.addEventListener("DOMContentLoaded", function(){
     })
 })
 
-function pasarDatosParaPago() {
-    
-    
+function pasar_a_pago() {
 
-    btnEfectivo.forEach(btn => {
+    //No hice diferencia entre el formulario de efectivo y paypal asi que da lo mismo el que presione
+    btnEfectivoPaypal.forEach(btn => {
         btn.addEventListener("click", ()=>{
 
             contPago.fadeOut()
@@ -71,12 +66,11 @@ function submitDatos() {
     let camposVacios = false;
     comprarBtnFinal = $("#comprar-btn-final")
 
-
     comprarBtnFinal.click(()=>{
 
         //Verificacion de campos vacios
         for (let i = 0; i < 3; i++) {
-
+            //Como el último campo es opcional hago que pase por los primeros 3
             if($(".input-pago")[i].value == "" ){
                 camposVacios = true;
             }
@@ -94,7 +88,7 @@ function submitDatos() {
             if (isNaN(telefono)) {
                 alertCustom('Ingrese un teléfono adecuado')
             }else{
-                //Esto sucede una vez que los campos son completados y el telefono valido
+                //Crea el objeto una vez que los campos son completados y el telefono valido
                 ticket = {
                     nombre: $(".input-pago")[0].value,
                     telefono: $(".input-pago")[1].value,
@@ -105,27 +99,7 @@ function submitDatos() {
 
                 contDatos.fadeOut()
 
-                setTimeout(function () {
-
-                    $("#carrito").slideUp()
-                    contCarrito.classList.toggle("height-auto")
-                    contTicketFinal.fadeIn();
-                    
-                    document.querySelector("#nombre").innerHTML = `<span class="bolder">Nombre:</span> ${ticket.nombre}`
-                    document.querySelector("#telefono").innerHTML = `<span class="bolder">Teléfono:</span> ${ticket.telefono}`
-                    document.querySelector("#direccion").innerHTML = `<span class="bolder">Dirección:</span> ${ticket.direccion}`
-                    document.querySelector("#descripcion").innerHTML = `<span class="bolder">Descripción:</span> ${ticket.descripcion}`
-                    document.querySelector("#total-pago-ticket").innerHTML = `Total: $${calcularTotal()}`
-                    
-                    ulListaProds = document.querySelector("#lista-prod-ticket");
-                    
-                    ulListaProds.innerHTML = renderProds();
-
-                    btnVolverTicket = document.querySelector("#volver-ticket")
-
-                    eventoVolver();
-                    
-                },500)
+                mostrarElTicket();
             }
         }
 
@@ -134,61 +108,31 @@ function submitDatos() {
     })
 }
 
-function alertCustom(message){
-    Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: message,
-      })
+function mostrarElTicket(){
+    setTimeout(function () {
+
+        $("#carrito").slideUp()
+        contCarrito.classList.toggle("height-auto")
+        contTicketFinal.fadeIn();
+        
+        document.querySelector("#nombre").innerHTML = `<span class="bolder">Nombre:</span> ${ticket.nombre}`
+        document.querySelector("#telefono").innerHTML = `<span class="bolder">Teléfono:</span> ${ticket.telefono}`
+        document.querySelector("#direccion").innerHTML = `<span class="bolder">Dirección:</span> ${ticket.direccion}`
+        document.querySelector("#descripcion").innerHTML = `<span class="bolder">Descripción:</span> ${ticket.descripcion}`
+        document.querySelector("#total-pago-ticket").innerHTML = `Total: $${calcularTotal()}`
+        
+        ulListaProds = document.querySelector("#lista-prod-ticket");
+        
+        ulListaProds.innerHTML = renderProds();
+
+        btnVolverTicket = document.querySelector("#volver-ticket")
+
+        eventoVolver();
+        
+    },500)
 }
 
-function renderTicket() {
-    return `
-    <div id="cont-ticket-final" class="mt-3">
-        <div id="titulo-final-ticket">COMPRA REALIZADA CON EXITO!!</div>
-        <div class="mt-2 mb-2"><img src="../icons/en-camino.png" alt=""></div>
-        <div class="flex-column-ticket raleway">
-            <span><span class="bolder">Nombre:</span> ${ticket.nombre}</span>
-            <span><span class="bolder">Teléfono:</span> ${ticket.telefono}</span>
-            <span><span class="bolder">Dirección:</span> ${ticket.direccion}</span>
-            <span><span class="bolder">Descripción:</span> ${ticket.descripcion}</span>
-            <div class="bolder">Lista:</div>
-            <ul id="lista-prod-ticket"></ul>
-            <span id="total-pago-ticket">Total: $${calcularTotal()}</span>
-
-            <button id="volver-ticket" class="btn btnLargo btnAgregar raleway">
-                Volver
-            </button>
-            
-        </div>
-    </div>
-    `
-}
-
-function renderInicio() {
-    return `
-            
-    <div id="cont-ticket">
-        <div id="cont-total" class="raleway">
-            <div id="cont-prod" class="display-none">Productos: 
-                <span class="ml-2" id="prodAgregados">
-                </span>
-            </div>
-                
-            <div id="total" class="mt-3">Total</div>
-                
-            <div id="totalNum" class="heebo">$0</div>
-                
-            <div class="mt-5">
-                <button id="btnComprar" class="btn">Comprar</button>
-            </div>
-                                    
-        </div>
-                                    
-    </div>
-    `
-}
-
+//Lista de productos en el ticket
 function renderProds()  {
     let htmlProd = " ";
     listaCarritoFinal().forEach(prod => {
@@ -199,6 +143,7 @@ function renderProds()  {
     return htmlProd;
 }
 
+//Escucha al boton Volver para finalizar el Proceso de pago
 function eventoVolver(){
     btnVolverTicket.addEventListener("click", ()=>{
         sessionStorage.ProcesoDePago = "false";
@@ -207,11 +152,17 @@ function eventoVolver(){
         setTimeout(function () {
             $("#carrito").slideDown()
             contTotal.fadeIn()
-            //contCarrito.innerHTML = renderInicio()
             contCarrito.classList.toggle("height-auto")
-            //modificarTotal()
             
         },500)
 
     })
+}
+
+function alertCustom(message){
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: message,
+      })
 }

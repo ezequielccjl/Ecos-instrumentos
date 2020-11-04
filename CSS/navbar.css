@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
-/*==================================== NAV BAR ========================================*/
+/*======== NAVBAR ========*/
 
 nav i{
     color: white;
@@ -200,7 +200,7 @@ nav{
     top: 0;
 }
 
-/*--------------- SECCION CARRITO ---------------*/
+/*Icono dentro del nav que muestra los productos agregados*/
 #carrito-nav{
     position: absolute;
     display: flex;
@@ -212,4 +212,19 @@ nav{
     transform: translate(-5%, -50%);
     z-index: 25;
     transition: .5s;
+}
+
+.dot {
+    height: 23px;
+    width: 24px;
+    background-color:#200000a2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    color: white;
+    margin-top: 1rem;
+    margin-left: -1.2rem;
+    z-index: 26;
 }

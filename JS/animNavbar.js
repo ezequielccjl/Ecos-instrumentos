@@ -1,29 +1,25 @@
+//Animacion de ECOS Music en navbar
+
 $(document).ready(function(){
-    let verificacion = false;
 
     let nav = $(".fixed").height();
     let header = $(".fondo").height();
     let total = nav+header-10;
-    
-    let objNav = $(".fixed")
 
     let disp = $(".disparador");
     disp.fadeOut()
 
-    //====================================== ANIMACIONES JQUERY (FadeIn // SlideUp)
+    //La animación se dispara cuando el scrollY supere el Header de presentación
     $(window).scroll(function(){
         if (window.pageYOffset>total) {
-            if (verificacion == false) {
-                disp.fadeIn(300)
-            }
+            disp.fadeIn(300)
         }
         if (window.pageYOffset<total) {
-            if (verificacion == false) {
-                disp.slideUp(100)
-            }
+            disp.slideUp(100)
         }
     })
 
+    //Cada vez que la ventana cambie de tamaño los valores se moifican
     window.addEventListener('resize', function(){
         nav = $(".fixed").height();
         header = $(".fondo").height();
