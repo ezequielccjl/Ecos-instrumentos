@@ -9,18 +9,12 @@ let contProd;
 sessionStorage.setItem('ProcesoDePago', 'false');
 let listaCarrito = localStorage.listaCarrito ? JSON.parse(localStorage.listaCarrito) : [];
 
-
-
-
 document.addEventListener("DOMContentLoaded", function(){
 
     parrafo = document.getElementById("agrego")
     totalPagar = document.getElementById("totalNum")
     prodAgregados = document.getElementById("prodAgregados")
     contProd = document.getElementById("cont-prod")
-
-    
-
 
     cargarListaCatalogo()
 

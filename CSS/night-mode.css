@@ -26,62 +26,90 @@
     opacity: 1;
 }
 
-.body-font-night{
+.body-night{
     color: white;
 }
-.catalogo-carrito-night{
+
+.body-night .catalogo-carrito{
     background-color: #151515;
+
 }
 
-.card-night{
+.body-night .card{
     background-color: rgb(61, 61, 61) !important;
     border-color: rgba(255, 254, 254, 0.2);
     box-shadow: 2px 2px 3px rgba(255, 255, 255, 0.2) !important;
 }
 
-.card-night .btnAgregar{
+.body-night .card img{
+    box-shadow: none !important;
+    background-color: rgba(255, 254, 254, 0) !important;
+}
+
+.body-night .btnAgregar{
     border-color: rgba(255, 254, 254, 0.5) !important;
     color: white !important;
 }
 
-.border-night{
-    border-color: rgba(255, 254, 254, 0.5) !important;
-    color: white !important;
+.body-night .btnAgregar:hover{
+    border-color: brown !important;
 }
 
-.border-night .listaBtn{
+.body-night .btnAgregar:hover i{
+    color: brown !important;
+}
+
+.body-night .listaBtn{
     color: white;
     border-color: rgba(255, 255, 255, 0.61);
 }
 
-.border-night #btnComprar:hover{
-    border-color: brown !important;
+.body-night .modal-content{
+    background-color: rgb(61, 61, 61) !important;
+    border-color: rgba(255, 254, 254, 0.2);
+    box-shadow: 2px 2px 3px rgba(255, 255, 255, 0.2) !important;
 }
 
-.card-night #comprarBtn:hover{
-    border-color: brown !important;
+.body-night #contLista{
+    border-color: rgba(255, 254, 254, 0.5) !important;
+    color: white !important;
 }
 
-.card-night #comprarBtn:hover i{
-    color: brown;
+.body-night #contCarrito{
+    border-color: rgba(255, 254, 254, 0.5) !important;
+    color: white !important;
 }
 
-.seccion-tiendas-night{
+.body-night #seccion-contacto{
     background-color: #151515 !important;
 }
 
-.btn-lista-night{
-    color: white;
-    border-color: rgba(255, 255, 255, 0.61);
+.body-night #btnComprar{
+    border-color: rgba(255, 254, 254, 0.5) !important;
+    color: white !important;
 }
 
+.body-night .marco-icono-carrito{
+    border-color: rgba(255, 254, 254, 0.5) !important;
+    color: white !important;
+}
 
-.body-font-night .swal2-popup.swal2-toast{
+.body-night .swal2-popup{
+    background-color: #272727 !important;
+    color: white !important;
+}
+
+.body-night .swal2-content{
+    color: #ffffff8f;
+}
+
+.body-night .swal2-popup.swal2-toast{
     color: white !important;
     background-color: rgb(61, 61, 61) !important;
 }
 
 
-.body-font-night .swal2-title{
+.body-night .swal2-title{
     color: white !important;
 }
+
