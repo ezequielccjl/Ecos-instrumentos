@@ -112,14 +112,14 @@ function mostrarElTicket(){
     setTimeout(function () {
 
         $("#carrito").slideUp()
-        contCarrito.classList.toggle("height-auto")
+        contCarrito.classList.add("height-auto")
         contTicketFinal.fadeIn();
         
         document.querySelector("#nombre").innerHTML = `<span class="bolder">Nombre:</span> ${ticket.nombre}`
         document.querySelector("#telefono").innerHTML = `<span class="bolder">Teléfono:</span> ${ticket.telefono}`
         document.querySelector("#direccion").innerHTML = `<span class="bolder">Dirección:</span> ${ticket.direccion}`
         document.querySelector("#descripcion").innerHTML = `<span class="bolder">Descripción:</span> ${ticket.descripcion}`
-        document.querySelector("#total-pago-ticket").innerHTML = `Total: $${calcularTotal()}`
+        document.querySelector("#total-pago-ticket").innerHTML = `<span class="precio">Total: $${calcularTotal()}</span>`
         
         ulListaProds = document.querySelector("#lista-prod-ticket");
         
@@ -152,7 +152,7 @@ function eventoVolver(){
         setTimeout(function () {
             $("#carrito").slideDown()
             contTotal.fadeIn()
-            contCarrito.classList.toggle("height-auto")
+            contCarrito.classList.remove("height-auto")
             
         },500)
 

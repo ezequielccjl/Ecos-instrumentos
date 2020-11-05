@@ -69,7 +69,7 @@ function htmlCatalogo(prod){
                 <div class="card-body heebo">
                     <p class="mb-1">${prod.nombre}</p>
                     <p class="m-0">
-                        <span class="font-weight-bold">$${prod.precio}</span>
+                        <span class="font-weight-bold precio">$${prod.precio}</span>
                     </p>
                     <div class="row m-0 p-0 btnMasMenos mt-2 justify-content-center">
                         <button id="comprarBtn" class="btn btnLargo btnAgregar raleway" onclick="agregaralcarrito(${prod.id}) ">
@@ -212,7 +212,7 @@ function restarUnProducto(){
                 //Borra UN producto de la lista carrito
                 let indiceProdBorrar = listaCarrito.indexOf(prodParaRestar)
                 listaCarrito.splice(indiceProdBorrar,1)
-    
+
                 //Actualiza el DOM y el localStorage
                 mostrarProdsAgregados();
                 actualizaLista()

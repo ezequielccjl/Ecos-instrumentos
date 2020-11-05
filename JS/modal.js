@@ -74,7 +74,7 @@ function htmlModal() {
             <div class="col-6 ml-4 contenedor-desc-modal">
               <div id="titulo-desc-modal">Descripción</div>
               <p class="text-center mt-2">${fullProduct.desc}</p>
-              <div id="precio-modal">$${fullProduct.precio}</div>
+              <div id="precio-modal" class="precio">$${fullProduct.precio}</div>
             </div>
           </div> 
         </div>

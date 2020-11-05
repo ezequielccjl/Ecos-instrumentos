@@ -195,6 +195,10 @@ body.swal2-toast-shown .swal2-container.swal2-top-end, body.swal2-toast-shown .s
     font-weight: bolder;
 }
 
+#cont-ticket-final .precio {
+    font-size: 1.2rem;
+}
+
 #volver-ticket{
     margin-top: 1.2rem;
 }
