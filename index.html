@@ -35,6 +35,7 @@
         $(document).ready(function() {
            $("#content-slider").lightSlider({
                loop:false,
+               autoWidth: false,
                keyPress:true
            });
         })
@@ -61,7 +62,7 @@
     <script src="JS/modal.js"></script>
     <script defer src="JS/selectFiltros.js"></script>
     <script src="JS/ticket.js"></script>
-    <script src="/JS/night-mode.js"></script>
+    <script src="JS/night-mode.js"></script>
     
 </head>
 
@@ -71,8 +72,8 @@
     <!-- Contenedor ventana 100% para traspaso de modo (Light/Night) -->
     <!-- Ligado con archivo night-mode.js -->
     <div class="cont-brightmode display-none">
-        <img id="img-luna" class="" src="/icons/moon-80px.png" alt="luna">
-        <img id="img-sol" class="display-none" src="/icons/sol-light-80px.png" alt="sol">
+        <img id="img-luna" class="" src="icons/moon-80px.png" alt="luna">
+        <img id="img-sol" class="display-none" src="icons/sol-light-80px.png" alt="sol">
     </div>
 
     <!-- Contenedor ventana 100% para modal -->
@@ -126,7 +127,7 @@
                 </li>
                 <li>
                     <a href="#seccion-contacto">
-                        <div class="formato-icons-menu"><img src="/icons/icons8-tienda-36.png" alt="tienda"></div>
+                        <div class="formato-icons-menu"><img src="icons/icons8-tienda-36.png" alt="tienda"></div>
                         <span class="ml-3">Tiendas</span>
                     </a>
                 </li>
@@ -194,7 +195,7 @@
                             </div>
 
                             <!--Contenedor del catalogo donde se cargan los productos con AJAX-->
-                            <div id="contCatalogo">
+                            <div id="contCatalogo" class="demo">
                                 <!------------ PRODUCTO DE GUIA (NO SE MUESTRA EN EL HTML) ------------>
                                 <div class="item pt-2">
                                     <ul id="content-slider" class="content-slider pt-2 display-none">
@@ -423,21 +424,21 @@
                         </ol>
                         <div class="carousel-inner">
                           <div class="carousel-item active">
-                            <img class="d-block w-100" src="/imgs-tienda/tres-1280x713.jpg" alt="First slide">
+                            <img class="d-block w-100" src="imgs-tienda/tres-1280x713.jpg" alt="First slide">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Tienda Flores</h5>
                                 <p>Ubicada en San Pedrito y Av. Rivadavia, cuenta con una sección disquería debido a la gran dimensión del local</p>
                             </div>
                           </div>
                           <div class="carousel-item">
-                            <img class="d-block w-100" src="/imgs-tienda/uno-2000x1114.jpg" alt="Second slide">
+                            <img class="d-block w-100" src="imgs-tienda/uno-2000x1114.jpg" alt="Second slide">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Tienda Devoto</h5>
                                 <p>Nos encontramos en Segurola y Habana 4310, a unas cuadras de Plaza Arenales.</p>
                             </div>
                           </div>
                           <div class="carousel-item">
-                            <img class="d-block w-100" src="/imgs-tienda/dos-2800x1560.jpg" alt="Third slide">
+                            <img class="d-block w-100" src="imgs-tienda/dos-2800x1560.jpg" alt="Third slide">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Abasto Shopping</h5>
                                 <p>Finalmente logramos establecernos en el Abasto Shoppong. Nos ubicamos en el 2do piso debajo del patio de comidas.</p>
@@ -462,7 +463,7 @@
         <seccion id="seccion-footer" class="col-12">
             <div class="row">
                 <div class="col-4 cont-logo-footer">
-                    <img id="img-footer" src="/imgs/guitarra.png" alt="logo">
+                    <img id="img-footer" src="imgs/guitarra.png" alt="logo">
                     <div>ECOS MUSIC©</div>
                 </div>
                 

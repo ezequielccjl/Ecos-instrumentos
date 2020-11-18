@@ -10,6 +10,11 @@ let listaDivsAgregados = [];
 let listaBotonesMas = [];
 let listaBotonesMenos = [];
 
+
+let lSSlideOuter;
+
+//noPager -> clase para sacar
+
 window.onload = function (){
 
     contCatalogo = document.getElementById("contCatalogo")
@@ -19,6 +24,9 @@ window.onload = function (){
     contLista = document.getElementById("listaProd")
     snipper = document.getElementById("snipper-carga")
     
+
+    lSSlideOuter = $(".lSSlideOuter")
+    lSSlideOuter.removeClass("noPager")
     //Verificación para mostrar productos en carrito según LocalStorage
     if (listaCarrito.length>=1) {
         mostrarProdsAgregados()
