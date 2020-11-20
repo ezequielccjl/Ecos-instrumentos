@@ -51,7 +51,7 @@ function cargarCatalogo(){
     let html = " ";
 
     $.ajax({
-        url: "../catalogo.json",
+        url: "catalogo.json",
         success: function(data){
             data.forEach(prod => {
                 html = html + htmlCatalogo(prod);

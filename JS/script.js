@@ -77,7 +77,7 @@ function mostrarProdsAgregados(){
 
 function cargarListaCatalogo(){
     $.ajax({
-        url: "../catalogo.json",
+        url: "catalogo.json",
         success: function(data){
             data.forEach(element =>{
                 listaCatalogo.push(element)
