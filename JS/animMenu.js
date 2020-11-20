@@ -1,5 +1,7 @@
 //Animación SideMenu
 
+// PARA RESPONSIVE -> $( window ).width()
+
 let hamburguer;
 let navLinks;
 let links;

@@ -131,7 +131,8 @@
 
 /*Seccion Footer*/
 #seccion-footer{
-    height: 40vh;
+    height: auto;
+    padding-bottom: 1rem;
     background: #300000;
 }
 
@@ -230,6 +231,58 @@
     background-color:rgba(0, 0, 0, 0.5);
 }
 
+@media only screen and (max-width: 993px) {
+    #seccion-footer > .row > div{
+        padding-bottom: 1rem;
+    }
+
+    #copy{
+        padding-top: 1rem;
+    }
+    
+    .lista-carrito{
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    #contLista{
+        margin-right: 0 !important;
+    }
+
+    #contCarrito{
+        margin-top: 1rem;
+        margin-left: 0 !important;
+    }
+
+    #seccion-filtros{
+        display: flex;
+        justify-content: center;
+    }
+
+    #seccion-filtros > .mt-3{
+        margin: 0 !important;
+    }
+
+    #seccion-about{
+        height: auto;
+        padding-top: 2rem;
+    }
+
+    
+
+    .sidebar{
+        right: -350px !important;
+    }
+
+    .cont-brightmode{
+        width: 137% !important;
+        height: 140% !important;
+    }
+
+    #ventana-modal{
+        width: 30rem !important;
+    }
+}
 
 
 
