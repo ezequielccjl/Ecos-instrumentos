@@ -3,7 +3,7 @@
       "id": 1,
       "nombre": "Guitarra Electrica Epiphone 1966 G400",
       "precio": 20560,
-      "imagen": "../imgsCat/sg.png",
+      "imagen": "imgsCat/sg.png",
       "alt": "sg",
       "desc": "La guitarra eléctrica Epiphone Limited-Edition 1966 G-400 PRO es una versión autorizada por Gibson de su gran SG del 66 con un cuerpo de caoba macizo y un mástil de caoba delgado y cónico. Algunas diferencias sutiles pero significativas hacen que este sea especial."
     },
@@ -11,7 +11,7 @@
       "id": 2,
       "nombre": "Guitarra Electrica Epiphone ES-335 PRO",
       "precio": 41890,
-      "imagen": "../imgsCat/es335.png",
+      "imagen": "imgsCat/es335.png",
       "alt": "es-335",
       "desc": "Presentada por primera vez a finales de los años 50, la serie ES se convirtió en un clásico del rock. El ES-335 fue el primero de la serie ES. Ahora Epiphone presenta el ES-335 PRO, un instrumento con sus raíces firmemente plantadas en la era clásica cuando se producían los instrumentos más legendarios del rock."
     },
@@ -19,7 +19,7 @@
       "id": 3,
       "nombre": "Piano Digital Yamaha YDP-144",
       "precio": 30180,
-      "imagen": "../imgsCat/yamahadigital.png",
+      "imagen": "imgsCat/yamahadigital.png",
       "alt": "piano-yamaha",
       "desc": "El piano digital YDP-144 proporciona un toque y un tono de piano auténticos adecuados para cualquier aspirante a pianista. Yamaha garantiza un tono completo y equilibrado a cualquier volumen. El gabinete de 42 pulgadas del Arius YDP-144 le da un aspecto de piano clásico a cualquier interior de hogar."
     },
@@ -27,7 +27,7 @@
       "id": 4,
       "nombre": "Sintetizador Moog Subsequent 37",
       "precio": 62100,
-      "imagen": "../imgsCat/moog.png",
+      "imagen": "imgsCat/moog.png",
       "alt": "sinte-moog",
       "desc": "El Subsequent 37 es un sintetizador analógico parafónico (2 notas) que se basa en el diseño del Sub 37 Tribute Edition. Su panel de control tiene 40 perillas y 74 interruptores, lo que coloca una amplia gama de herramientas de diseño de sonido analógico y opciones de secuenciación integradas a su disposición."
     },
@@ -35,7 +35,7 @@
       "id": 5,
       "nombre": "Sintetizador Modulo Roland JU-06A",
       "precio": 41500,
-      "imagen": "../imgsCat/ju06a.png",
+      "imagen": "imgsCat/ju06a.png",
       "alt": "roland-ju06a",
       "desc": "Los sintetizadores Roland JUNO definieron el sonido de los 80. Muchos músicos quieren uno o lamentan haberlo vendido en el pasado. Con el JU-06A obtienes el sonido, la apariencia y las características del JUNO-60 y JUNO-106 en un instrumento moderno y confiable que puedes llevar a cualquier parte."
     },
@@ -43,7 +43,7 @@
       "id": 6,
       "nombre": "Amplificador Orange 12W Crush12",
       "precio": 12900,
-      "imagen": "../imgsCat/orange.png",
+      "imagen": "imgsCat/orange.png",
       "alt": "amp-orange",
       "desc": "El Orange Crush Mini se rediseñó para darle un tono Orange en un amplificador pequeño y liviano. El panel de control rediseñado le brinda un control tonal completo con ganancia, forma y volumen."
     },
@@ -51,7 +51,7 @@
       "id": 7,
       "nombre": "Bateria Yamaha Custom Birch",
       "precio": 30050,
-      "imagen": "../imgsCat/yamahacustom.png",
+      "imagen": "imgsCat/yamahacustom.png",
       "alt": "bateria-yamaha",
       "desc": "La batería Yamaha Stage Custom es ideal para principiantes o profesionales. El sistema de sellado de aire de Yamaha garantiza que todas y cada una de las cubiertas de la batería Yamaha tengan un grosor uniforme y sean perfectamente redondas para lograr una calidad de tono y una durabilidad superiores."
     },
@@ -59,7 +59,7 @@
       "id": 8,
       "nombre": "Redoblante Snare Drum Pearl M 80",
       "precio": 9700,
-      "imagen": "../imgsCat/redo.png",
+      "imagen": "imgsCat/redo.png",
       "alt": "snare-pearl",
       "desc": "El redoblante Pearl M-80 es una caja alternativa increíble y sorprendente. Ofrece una construcción de madera de álamo y un tamaño compacto de 10x4 pulgadas para potencia explosiva. También nos entrega un tono brillante y penetrante. Se monta en un soporte de percusión estándar o se apoya en un soporte de caja."
     },
@@ -67,7 +67,7 @@
       "id": 9,
       "nombre": "Saxofón Etude EAS-100 Student Alto",
       "precio": 21300,
-      "imagen": "../imgsCat/saxo.png",
+      "imagen": "imgsCat/saxo.png",
       "alt": "saxo",
       "desc": "Hecho de metales finos para una producción de tono superior, el Etude EAS-100 es el instrumento perfecto para iniciarse en el saxofón alto. Las teclas, almohadillas y el ajuste funcionan en conjunto para hacer que la producción de tonos sea más fácil, consistente y fuerte."
     },
@@ -75,7 +75,7 @@
       "id": 10,
       "nombre": "Violin Etude Student Series Outfit",
       "precio": 8900,
-      "imagen": "../imgsCat/violin.png",
+      "imagen": "imgsCat/violin.png",
       "alt": "violin",
       "desc": "El mástil es de arce macizo con un acabado aceitado y el diapasón y los accesorios son de madera dura ebonizada. Cuenta con un cordal compuesto con cuatro afinadores finos, una mentonera estilo Stradivarius, un puente de arce envejecido y un acabado rojo tradicional."
     }

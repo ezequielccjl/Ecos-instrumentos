@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 function buscarProd(){
     $.ajax({
-        url: "JSON/catalogo.json",
+        url: "../catalogo.json",
         success: function(data){
             
             productosFiltrados = data.filter(prod => {
